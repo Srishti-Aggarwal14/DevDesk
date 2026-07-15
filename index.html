@@ -2,21 +2,61 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>DevDesk</title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet"
+          href="assets/css/style.css">
+
 </head>
 
 <body>
 
     <div class="container">
 
-        <!-- Welcome Heading -->
-        <h1 id="heading"></h1>
+        <!-- ===========================
+             Navigation
+        ============================ -->
 
-        <!-- Today's Focus -->
+        <nav class="navbar">
+
+    <h2>🚀 DevDesk</h2>
+
+    <div class="nav-right">
+
+        <div class="date-time">
+
+            <p id="currentDate"></p>
+
+            <p id="currentTime"></p>
+
+        </div>
+
+        <button id="themeBtn">
+            🌙
+        </button>
+
+    </div>
+
+</nav>
+
+        <!-- Heading -->
+
+        <div class="greeting-section">
+
+    <h1 id="heading"></h1>
+
+    <p id="motivation"></p>
+
+</div>
+
+        <!-- Focus -->
+
         <div class="focus-card">
 
             <h2>🎯 Today's Focus</h2>
@@ -24,30 +64,33 @@
             <p id="tagline"></p>
 
             <input
-                type="text"
                 id="focusInput"
-                placeholder="Enter today's focus"
-            >
+                type="text"
+                placeholder="Enter today's focus">
 
             <button id="updateBtn">
+
                 Update Focus
+
             </button>
 
         </div>
 
-        <!-- Quick Notes -->
+        <!-- Notes -->
+
         <div class="notes-card">
 
             <h2>📝 Quick Notes</h2>
 
             <input
-                type="text"
                 id="noteInput"
-                placeholder="Write a note..."
-            >
+                type="text"
+                placeholder="Write a note...">
 
             <button id="addNoteBtn">
+
                 Add Note
+
             </button>
 
             <ul id="notesList"></ul>
@@ -56,7 +99,6 @@
 
     </div>
 
-    <!-- JavaScript Files -->
     <script src="assets/js/storage.js"></script>
     <script src="assets/js/focus.js"></script>
     <script src="assets/js/notes.js"></script>
@@ -65,3 +107,4 @@
 </body>
 
 </html>
+

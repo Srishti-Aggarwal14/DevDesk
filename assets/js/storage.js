@@ -1,48 +1,40 @@
 // ===============================
-// DevDesk
-// storage.js
-// Handles Local Storage
+// STORAGE FUNCTIONS
 // ===============================
 
 
-// ---------- Notes ----------
+// ---------- USER ----------
 
-function saveNotes() {
+function saveUser() {
 
-    localStorage.setItem(
-        "devdeskNotes",
-        JSON.stringify(notes)
-    );
+    localStorage.setItem("userName", userName);
 
 }
 
-function loadNotes() {
+function loadUser() {
 
-    let storedNotes = localStorage.getItem("devdeskNotes");
+    let storedUser = localStorage.getItem("userName");
 
-    if (storedNotes !== null) {
+    if (storedUser !== null) {
 
-        notes = JSON.parse(storedNotes);
+        userName = storedUser;
 
     }
 
 }
 
 
-// ---------- Today's Focus ----------
+// ---------- FOCUS ----------
 
 function saveFocus() {
 
-    localStorage.setItem(
-        "devdeskFocus",
-        todaysFocus
-    );
+    localStorage.setItem("todaysFocus", todaysFocus);
 
 }
 
 function loadFocus() {
 
-    let storedFocus = localStorage.getItem("devdeskFocus");
+    let storedFocus = localStorage.getItem("todaysFocus");
 
     if (storedFocus !== null) {
 
@@ -53,25 +45,37 @@ function loadFocus() {
 }
 
 
-// ---------- Username ----------
+// ---------- NOTES ----------
 
-function saveUser() {
+function saveNotes() {
 
-    localStorage.setItem(
-        "devdeskUser",
-        userName
-    );
+    localStorage.setItem("notes", JSON.stringify(notes));
 
 }
 
-function loadUser() {
+function loadNotes() {
 
-    let storedUser = localStorage.getItem("devdeskUser");
+    let storedNotes = localStorage.getItem("notes");
 
-    if (storedUser !== null) {
+    if (storedNotes !== null) {
 
-        userName = storedUser;
+        notes = JSON.parse(storedNotes);
 
     }
+
+}
+
+
+// ---------- THEME ----------
+
+function saveTheme(theme) {
+
+    localStorage.setItem("theme", theme);
+
+}
+
+function loadTheme() {
+
+    return localStorage.getItem("theme");
 
 }

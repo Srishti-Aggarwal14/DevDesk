@@ -1024,3 +1024,181 @@ Delete
 ## Local Storage
 
 Every Create, Update, and Delete operation immediately saves data using saveNotes().
+
+# Day 17 - Navigation Bar
+
+## Objective
+
+Create a navigation bar that displays:
+
+- Application Name
+- Current Date
+- Current Time
+
+## New HTML Tags
+
+- nav
+- div
+- p
+
+## New IDs
+
+currentDate
+
+currentTime
+
+These IDs will later be updated dynamically using JavaScript.
+
+# Day 17 - Live Date & Time
+
+## Objective
+
+Display the current date and time in the navigation bar.
+
+## Concepts Learned
+
+### new Date()
+
+Creates a Date object containing the current date and time.
+
+### toLocaleDateString()
+
+Formats the date according to the selected locale.
+
+### toLocaleTimeString()
+
+Formats the current time.
+
+### setInterval()
+
+Executes a function repeatedly after a specified interval.
+
+Example:
+
+setInterval(updateDateTime, 1000);
+
+This updates the clock every second.
+
+## Interview Question
+
+Why do we use setInterval()?
+
+Answer:
+
+It is used when we want to execute a function repeatedly after a fixed interval, such as updating a live clock.
+
+# Day 17 - Dynamic Greeting
+
+## Objective
+
+Display different greetings based on the current time.
+
+## Method Used
+
+new Date().getHours()
+
+Returns the current hour (0-23).
+
+## Conditions
+
+5-11
+
+Good Morning
+
+12-16
+
+Good Afternoon
+
+17-20
+
+Good Evening
+
+21-4
+
+Good Night
+
+## Concepts Learned
+
+- if else
+- Logical AND (&&)
+- Date Object
+- DOM Manipulation
+- Dynamic UI
+
+🏆 Interview Question (Very Important)
+
+If an interviewer asks:
+
+"Why did you use getHours() instead of checking the full time string?"
+
+A good answer is:
+
+"getHours() returns a numeric value from 0 to 23, making it easy to compare ranges using conditional statements. It's more reliable and efficient than parsing a formatted time string."
+
+# Day 18 - Dark Mode
+
+## Objective
+
+Implement Dark Mode with theme persistence.
+
+## Features
+
+- Toggle between Light and Dark Mode
+- Save user preference using Local Storage
+- Automatically restore the saved theme on page load
+
+## Concepts Learned
+
+- classList
+- classList.toggle()
+- Local Storage
+- Event Listeners
+- UI Personalization
+
+## Why Dark Mode?
+
+Dark Mode improves user experience, especially in low-light environments, and is a common feature in modern web applications.
+## CSS Concepts Learned
+
+### .dark-mode
+
+A CSS class applied to the `<body>` element to switch the application's appearance.
+
+### Descendant Selectors
+
+Example:
+
+.dark-mode .container
+
+Styles the container only when Dark Mode is active.
+
+### Transition
+
+Used to create a smooth effect while switching between themes.
+## JavaScript Concepts Learned
+
+### classList.toggle()
+
+Adds the class if it doesn't exist and removes it if it does.
+
+Example:
+
+document.body.classList.toggle("dark-mode");
+
+---
+
+### Local Storage
+
+Theme preference is saved using:
+
+localStorage.setItem()
+
+and restored using:
+
+localStorage.getItem()
+
+---
+
+### Theme Persistence
+
+The application remembers the user's preferred theme even after refreshing or reopening the browser.
