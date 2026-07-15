@@ -6,26 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevDesk</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-    <h1 id="heading">Welcome to DevDesk 🚀</h1>
+    <div class="container">
 
-    <p id="tagline">Build. Learn. Grow.</p>
+        <!-- Welcome Heading -->
+        <h1 id="heading"></h1>
 
-    <input
-        type="text"
-        id="focusInput"
-        placeholder="Enter today's focus"
-    >
+        <!-- Today's Focus -->
+        <div class="focus-card">
 
-    <button id="updateBtn">
-        Update Focus
-    </button>
+            <h2>🎯 Today's Focus</h2>
 
-    <script src="script.js"></script>
+            <p id="tagline"></p>
+
+            <input
+                type="text"
+                id="focusInput"
+                placeholder="Enter today's focus"
+            >
+
+            <button id="updateBtn">
+                Update Focus
+            </button>
+
+        </div>
+
+        <!-- Quick Notes -->
+        <div class="notes-card">
+
+            <h2>📝 Quick Notes</h2>
+
+            <input
+                type="text"
+                id="noteInput"
+                placeholder="Write a note..."
+            >
+
+            <button id="addNoteBtn">
+                Add Note
+            </button>
+
+            <ul id="notesList"></ul>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/focus.js"></script>
+    <script src="assets/js/notes.js"></script>
+    <script src="assets/js/app.js"></script>
 
 </body>
 

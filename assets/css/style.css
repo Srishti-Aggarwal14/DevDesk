@@ -1,0 +1,259 @@
+/* ==========================
+   Global Styles
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#eef2ff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+}
+
+/* ==========================
+   Container
+========================== */
+
+.container{
+
+    width:600px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+
+}
+
+/* ==========================
+   Heading
+========================== */
+
+h1{
+
+    text-align:center;
+
+    color:#2563eb;
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================
+   Cards
+========================== */
+
+.focus-card,
+.notes-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-bottom:35px;
+
+}
+
+.focus-card h2,
+.notes-card h2{
+
+    color:#1f2937;
+
+}
+
+#tagline{
+
+    color:#4b5563;
+
+    font-size:18px;
+
+    font-weight:500;
+
+}
+
+/* ==========================
+   Inputs
+========================== */
+
+input{
+
+    padding:14px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+input:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+button{
+
+    padding:14px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* ==========================
+   Notes
+========================== */
+
+.notes-card ul{
+
+    list-style:none;
+
+    margin-top:10px;
+
+}
+
+/* ==========================
+   Single Note
+========================== */
+
+.note-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    padding:14px 16px;
+
+    border-radius:10px;
+
+    margin-bottom:12px;
+
+}
+
+/* ==========================
+   Action Buttons
+========================== */
+
+.actions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+/* ==========================
+   Edit Button
+========================== */
+
+.edit-btn{
+
+    width:38px;
+
+    height:38px;
+
+    padding:0;
+
+    border-radius:50%;
+
+    background:#f59e0b;
+
+}
+
+.edit-btn:hover{
+
+    background:#d97706;
+
+}
+
+/* ==========================
+   Delete Button
+========================== */
+
+.delete-btn{
+
+    width:38px;
+
+    height:38px;
+
+    padding:0;
+
+    border-radius:50%;
+
+    background:#ef4444;
+
+}
+
+.delete-btn:hover{
+
+    background:#dc2626;
+
+}
+
+/* ==========================
+   Empty List
+========================== */
+
+.empty-message{
+
+    text-align:center;
+
+    color:#6b7280;
+
+    font-style:italic;
+
+}

@@ -469,3 +469,558 @@ What is application state?
 Why should UI depend on state instead of hardcoded text?
 What does trim() do?
 Why do we use return inside validation?
+
+# Day 08 - Structuring the Dashboard
+
+## Why Use Containers?
+
+A container groups related elements together.
+
+Benefits:
+
+- Better layout
+- Easier styling
+- Cleaner HTML
+- More maintainable code
+
+---
+
+## Card Layout
+
+Instead of placing all elements directly on the page, group related content into cards.
+
+Example:
+
+- Welcome Card
+- Focus Card
+- Notes Card
+
+---
+
+## Why are we restructuring?
+
+As projects grow, clean HTML becomes more important than writing lots of code.
+
+Professional projects organize UI into logical sections.
+
+# Day 09 - Flexbox Basics
+
+## What is Flexbox?
+
+Flexbox is a CSS layout system used to align and distribute space among elements.
+
+---
+
+## display: flex
+
+Turns an element into a flex container.
+
+Example:
+
+```css
+display: flex;
+```
+
+---
+
+## justify-content
+
+Controls horizontal alignment.
+
+Common values:
+
+- center
+- space-between
+- flex-start
+- flex-end
+
+---
+
+## align-items
+
+Controls vertical alignment.
+
+Example:
+
+```css
+align-items: center;
+```
+
+---
+
+## flex-direction
+
+Determines the direction of items.
+
+```css
+flex-direction: column;
+```
+
+Stacks items vertically.
+
+---
+
+## gap
+
+Creates equal spacing between flex items.
+
+---
+
+## box-shadow
+
+Adds depth to cards and components.
+
+---
+
+## Quick Revision
+
+- Flexbox simplifies layouts.
+- `display: flex` enables Flexbox.
+- `justify-content` aligns horizontally.
+- `align-items` aligns vertically.
+- `gap` replaces repeated margins.
+🎤 Interview Questions
+What is Flexbox?
+Difference between justify-content and align-items?
+Why do we use box-sizing: border-box?
+What does gap do?
+What is the advantage of using display: flex over older layout methods?
+
+💼 Interview Insight
+
+If an interviewer asks:
+
+"Why did you use focus()?"
+
+A good answer is:
+
+"After the user updates their focus, I automatically return the cursor to the input field so they can quickly enter another task without needing an extra click. It improves the user experience."
+
+That's a much stronger answer than simply saying:
+
+"Because I wanted the cursor there."
+# Day 10 - Arrays
+
+## What is an Array?
+
+An array stores multiple values in a single variable.
+
+Example:
+
+```javascript
+let fruits = ["Apple", "Mango", "Orange"];
+```
+
+---
+
+## Empty Array
+
+```javascript
+let notes = [];
+```
+
+---
+
+## push()
+
+Adds an item at the end.
+
+```javascript
+notes.push("Complete DSA");
+```
+
+---
+
+## Why Arrays?
+
+Instead of creating
+
+note1
+
+note2
+
+note3
+
+use
+
+notes[]
+
+to store unlimited values.
+
+---
+
+## Quick Revision
+
+- Arrays store collections.
+- [] creates an array.
+- push() adds data.
+
+# Day 11 - Arrays + For Loop + Dynamic DOM
+
+## createElement()
+
+Creates a new HTML element.
+
+Example:
+
+```javascript
+let li = document.createElement("li");
+```
+
+---
+
+## appendChild()
+
+Adds an element to the webpage.
+
+Example:
+
+```javascript
+notesList.appendChild(li);
+```
+
+---
+
+## innerHTML = ""
+
+Removes all existing HTML inside an element.
+
+Useful before re-rendering lists.
+
+---
+
+## for Loop
+
+Used to iterate over arrays.
+
+Example:
+
+```javascript
+for(let i=0; i<notes.length; i++){
+
+}
+```
+
+---
+
+## Why Loop?
+
+Instead of manually creating every note,
+
+the loop creates one `<li>` for each item in the array.
+
+---
+
+## Quick Revision
+
+- Arrays store data.
+- for loop visits every item.
+- createElement creates HTML.
+- appendChild displays HTML.
+
+🎤 Interview Questions
+Why do we use createElement() instead of writing HTML strings?
+What does appendChild() do?
+Why do we clear innerHTML before displaying notes?
+How does a for loop work with arrays?
+Why is the data stored in an array instead of directly writing into the HTML?
+
+# Day 12 - splice()
+
+## splice()
+
+Used to remove or insert items inside an array.
+
+Example
+
+```javascript
+notes.splice(2,1);
+```
+
+Deletes one element from index 2.
+
+---
+
+## dataset
+
+Stores custom data inside HTML elements.
+
+Example
+
+```javascript
+button.dataset.index=5;
+```
+
+Later
+
+```javascript
+button.dataset.index
+```
+
+returns
+
+```
+5
+```
+
+---
+
+## CRUD
+
+Create
+
+Read
+
+Update
+
+Delete
+
+Most web applications are CRUD applications.
+
+💼 Interview Questions
+Difference between slice() and splice()?
+Why did we use dataset?
+Why call displayNotes() after deleting?
+What happens if you don't re-render the UI after modifying the array?
+Explain CRUD with your DevDesk project.
+
+# Day 13 - Update Operation (CRUD)
+
+## Updating an Array
+
+Arrays can be updated using their index.
+
+Example:
+
+```javascript
+notes[0] = "Learn React";
+```
+
+---
+
+## prompt()
+
+Used to take input from the user.
+
+Example:
+
+```javascript
+let name = prompt("Enter your name");
+```
+
+---
+
+## CRUD
+
+Create → Add
+
+Read → Display
+
+Update → Edit
+
+Delete → Remove
+
+---
+
+## Revision
+
+- Arrays can be updated by index.
+- prompt() can accept a default value.
+- Always validate user input before updating.
+
+🧠 Today's Interview Questions
+What is CRUD?
+How do you update an element inside an array?
+Why do we use dataset.index?
+Difference between push() and notes[index] = value?
+Why do we call displayNotes() after editing?
+
+# Day 14 - Local Storage
+
+## Problem
+
+Data was disappearing after refresh because arrays exist only in memory.
+
+---
+
+## localStorage
+
+Stores data inside the browser.
+
+---
+
+## setItem()
+
+Used to save data.
+
+Example
+
+```javascript
+localStorage.setItem("notes","Hello");
+```
+
+---
+
+## getItem()
+
+Reads data.
+
+```javascript
+localStorage.getItem("notes");
+```
+
+---
+
+## JSON.stringify()
+
+Converts
+
+Array
+
+↓
+
+String
+
+Needed because localStorage stores only strings.
+
+---
+
+## JSON.parse()
+
+Converts
+
+String
+
+↓
+
+Array
+# Day 15 - Storage Module
+
+## Local Storage
+
+Local Storage is used to save data inside the browser.
+
+Data remains available even after refreshing or closing the browser.
+
+---
+
+## Functions Created
+
+saveNotes()
+
+Stores notes.
+
+loadNotes()
+
+Reads notes.
+
+saveFocus()
+
+Stores today's focus.
+
+loadFocus()
+
+Reads today's focus.
+
+saveUser()
+
+Stores username.
+
+loadUser()
+
+Reads username.
+
+---
+
+## Keys Used
+
+devdeskNotes
+
+devdeskFocus
+
+devdeskUser
+
+# Day 15 - Focus Module
+
+## Purpose
+
+This file manages the "Today's Focus" feature.
+
+---
+
+## Functions
+
+### updateTagline()
+
+Updates the text displayed on the screen.
+
+---
+
+### updateFocus()
+
+- Reads user input
+- Validates input
+- Updates today's focus
+- Saves data to Local Storage
+- Refreshes the UI
+- Clears the input field
+- Places the cursor back into the input
+
+---
+
+## New Concept
+
+saveFocus()
+
+Stores the latest focus inside Local Storage.
+
+This allows the focus to remain even after refreshing the browser.
+
+# Day 15 - Notes Module
+
+## Purpose
+
+This file manages the Quick Notes feature.
+
+---
+
+## CRUD Operations
+
+Create
+
+- Add a new note
+
+Read
+
+- Display all notes
+
+Update
+
+- Edit an existing note
+
+Delete
+
+- Remove a note
+
+---
+
+## Validation
+
+- Empty notes are not allowed.
+- Duplicate notes are not allowed.
+- Maximum of 5 notes can be added.
+
+---
+
+## DOM Concepts Used
+
+- createElement()
+- appendChild()
+- dataset
+- addEventListener()
+
+---
+
+## Local Storage
+
+Every Create, Update, and Delete operation immediately saves data using saveNotes().
