@@ -143,3 +143,30 @@ function loadTasks() {
     }
 
 }
+// ===============================
+// Planner Storage
+// ===============================
+
+function savePlanner() {
+
+    localStorage.setItem(
+
+        "planner",
+
+        JSON.stringify(planner)
+
+    );
+
+}
+
+function loadPlanner() {
+
+    let data = localStorage.getItem("planner");
+
+    if (data) {
+
+        planner = JSON.parse(data);
+
+    }
+
+}

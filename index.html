@@ -177,160 +177,218 @@
 
             </div>
 
-            <!-- ===========================
-                 Daily Progress
-            ============================ -->
+        </div>
 
-            <div class="progress-section">
+        <!-- ===========================
+             Task Manager
+        ============================ -->
 
-                <h3>📈 Daily Progress</h3>
+        <div class="task-card">
 
-                <div class="progress-bar">
+            <h2>✅ Task Manager</h2>
 
-                    <div id="progressFill"></div>
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a task">
+
+            <select id="priority">
+
+                <option>High</option>
+
+                <option>Medium</option>
+
+                <option>Low</option>
+
+            </select>
+
+            <input
+                type="date"
+                id="dueDate">
+
+            <button id="addTaskBtn">
+
+                Add Task
+
+            </button>
+
+            <br><br>
+
+            <input
+                type="text"
+                id="searchTask"
+                placeholder="Search task...">
+
+            <select id="sortTasks">
+
+                <option value="default">Sort Tasks</option>
+
+                <option value="priority">Priority</option>
+
+                <option value="date">Due Date</option>
+
+                <option value="az">A → Z</option>
+
+            </select>
+
+            <br><br>
+
+            <button id="allTasksBtn">
+
+                All
+
+            </button>
+
+            <button id="pendingBtn">
+
+                Pending
+
+            </button>
+
+            <button id="completedBtn">
+
+                Completed
+
+            </button>
+
+            <ul id="taskList"></ul>
+
+        </div>
+
+        <!-- ===========================
+             Task Analytics
+        ============================ -->
+
+        <div class="analytics-card">
+
+            <h2>📊 Task Analytics</h2>
+
+            <div class="analytics-grid">
+
+                <div class="analytics-box">
+
+                    <h3 id="totalTasks">0</h3>
+
+                    <p>Total Tasks</p>
 
                 </div>
 
-                <p id="progressText">0%</p>
+                <div class="analytics-box">
+
+                    <h3 id="completedTasks">0</h3>
+
+                    <p>Completed</p>
+
+                </div>
+
+                <div class="analytics-box">
+
+                    <h3 id="pendingTasks">0</h3>
+
+                    <p>Pending</p>
+
+                </div>
+
+                <div class="analytics-box">
+
+                    <h3 id="completionRate">0%</h3>
+
+                    <p>Completion</p>
+
+                </div>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+        </div>
+
+        <!-- ===========================
+             Weather Widget
+        ============================ -->
+
+        <div class="weather-card">
+
+            <h2>🌤 Today's Weather</h2>
+
+            <div class="weather-info">
+
+                <h3 id="cityName">
+
+                    City
+
+                </h3>
+
+                <h1 id="temperature">
+
+                    --°C
+
+                </h1>
+
+                <p id="weatherCondition">
+
+                    Loading...
+
+                </p>
+
+                <div class="weather-details">
+
+                    <p>
+
+                        💧 Humidity:
+                        <span id="humidity">
+
+                            --
+
+                        </span>%
+
+                    </p>
+
+                    <p>
+
+                        🌬 Wind:
+                        <span id="windSpeed">
+
+                            --
+
+                        </span>
+                        km/h
+
+                    </p>
+
+                </div>
 
             </div>
 
         </div>
         <!-- ===========================
-     Task Manager
+     Daily Planner
 =========================== -->
 
-<!-- ===========================
-     Task Manager
-=========================== -->
+<div class="planner-card">
 
-<div class="task-card">
-
-    <h2>✅ Task Manager</h2>
+    <h2>📅 Daily Planner</h2>
 
     <input
-        id="taskInput"
+        type="time"
+        id="plannerTime">
+
+    <input
         type="text"
-        placeholder="Enter a task...">
+        id="plannerTask"
+        placeholder="Enter your plan">
 
-    <select id="priority">
+    <button id="addPlannerBtn">
 
-        <option value="High">🔴 High Priority</option>
-
-        <option value="Medium">🟡 Medium Priority</option>
-
-        <option value="Low">🟢 Low Priority</option>
-
-    </select>
-
-    <input
-        type="date"
-        id="dueDate">
-
-    <button id="addTaskBtn">
-
-        Add Task
+        Add Plan
 
     </button>
-    <div class="filter-buttons">
 
-    <button id="allTasksBtn">
-        All
-    </button>
-
-    <button id="pendingBtn">
-        Pending
-    </button>
-
-    <button id="completedBtn">
-        Completed
-    </button>
-    <input
-    type="text"
-    id="searchTask"
-    placeholder="🔍 Search tasks...">
-    <div class="sort-section">
-
-    <label for="sortTasks">
-        Sort By
-    </label>
-
-    <select id="sortTasks">
-
-        <option value="default">
-            Default
-        </option>
-
-        <option value="priority">
-            Priority
-        </option>
-
-        <option value="date">
-            Due Date
-        </option>
-
-        <option value="az">
-            A → Z
-        </option>
-
-    </select>
-
-</div>
-<!-- ===========================
-     Task Analytics
-=========================== -->
-
-<div class="analytics-card">
-
-    <h2>📊 Task Analytics</h2>
-
-    <div class="analytics-grid">
-
-        <div class="analytics-box">
-
-            <h3 id="totalTasks">0</h3>
-
-            <p>Total Tasks</p>
-
-        </div>
-
-        <div class="analytics-box">
-
-            <h3 id="completedTasks">0</h3>
-
-            <p>Completed</p>
-
-        </div>
-
-        <div class="analytics-box">
-
-            <h3 id="pendingTasks">0</h3>
-
-            <p>Pending</p>
-
-        </div>
-
-        <div class="analytics-box">
-
-            <h3 id="completionRate">0%</h3>
-
-            <p>Completion</p>
-
-        </div>
-
-    </div>
-
-    <div class="progress-bar">
-
-        <div id="progressFill"></div>
-
-    </div>
-
-</div>
-
-</div>
-
-    <ul id="taskList"></ul>
+    <ul id="plannerList"></ul>
 
 </div>
 
@@ -340,7 +398,9 @@
     <script src="assets/js/focus.js"></script>
     <script src="assets/js/notes.js"></script>
     <script src="assets/js/tasks.js"></script>
+    <script src="assets/js/planner.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/weather.js"></script>
 
 </body>
 

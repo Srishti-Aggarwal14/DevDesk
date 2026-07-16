@@ -1400,3 +1400,23 @@ It provides visual feedback about urgency, making the timer easier to interpret 
 - Array Filtering
 - Searching
 - Progress Calculations
+
+# Milestone 6 – Daily Planner
+
+## Features Added
+
+- Daily planner
+- Time-based planning
+- Sort by time
+- Mark completed
+- Delete plans
+- LocalStorage support
+- Responsive planner UI
+
+## Concepts Learned
+
+- Sorting arrays
+- LocalStorage
+- DOM Manipulation
+- Event Listeners
+- Object Arrays

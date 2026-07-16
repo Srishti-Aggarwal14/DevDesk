@@ -1141,3 +1141,227 @@ button:disabled {
     background:#6b7280;
 
 }
+/* ===============================
+   Weather Widget
+=============================== */
+
+.weather-card{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    background:#f8fafc;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 12px rgba(0,0,0,0.08);
+
+    text-align:center;
+
+}
+
+.weather-info h1{
+
+    font-size:60px;
+
+    margin:15px 0;
+
+    color:#2563eb;
+
+}
+
+.weather-info h3{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.weather-info p{
+
+    font-size:18px;
+
+    margin:8px 0;
+
+}
+
+.weather-details{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    margin-top:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.weather-details p{
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+/* ===============================
+   Dark Mode
+=============================== */
+
+.dark-mode .weather-card{
+
+    background:#374151;
+
+    color:white;
+
+}
+
+.dark-mode .weather-info h1{
+
+    color:#60a5fa;
+
+}
+/* ===============================
+   Daily Planner
+=============================== */
+
+.planner-card{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    background:#f8fafc;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 12px rgba(0,0,0,0.08);
+
+}
+
+.planner-card h2{
+
+    margin-bottom:20px;
+
+}
+
+.planner-card input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    box-sizing:border-box;
+
+}
+
+.planner-card button{
+
+    width:100%;
+
+    padding:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    margin-bottom:20px;
+
+}
+
+.planner-card button:hover{
+
+    background:#1d4ed8;
+
+}
+
+#plannerList{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+#plannerList li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px;
+
+    margin-bottom:10px;
+
+    background:white;
+
+    border-radius:10px;
+
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+
+}
+
+#plannerList li.completed{
+
+    opacity:0.6;
+
+    text-decoration:line-through;
+
+}
+
+.planner-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.planner-buttons button{
+
+    width:auto;
+
+    padding:8px 12px;
+
+    margin:0;
+
+}
+
+.dark-mode .planner-card{
+
+    background:#374151;
+
+    color:white;
+
+}
+
+.dark-mode #plannerList li{
+
+    background:#4b5563;
+
+    color:white;
+
+}
