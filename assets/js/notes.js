@@ -39,6 +39,10 @@ function addNote() {
 
     notes.push(note);
 
+    stats.notes++;
+
+updateDashboard();
+
     saveNotes();
 
     displayNotes();
@@ -173,6 +177,9 @@ function displayNotes() {
             }
 
             notes.splice(index, 1);
+            stats.notes--;
+
+updateDashboard();
 
             saveNotes();
 

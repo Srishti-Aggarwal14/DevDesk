@@ -1319,3 +1319,19 @@ Q3. Why change the timer color?
 Answer:
 
 It provides visual feedback about urgency, making the timer easier to interpret without reading the exact time.
+
+# Milestone 3 - Pomodoro Timer
+
+## Features Added
+
+- Added 25-minute Pomodoro timer
+- Start, Pause and Reset controls
+- Prevented multiple timers from running simultaneously
+- Disabled buttons based on timer state
+- Dynamic timer colors
+  - Blue (>10 min)
+  - Orange (5–10 min)
+  - Red (<5 min)
+- Completion message after timer ends
+- Timer resets automatically after completion
+- Integrated with Dark Mode

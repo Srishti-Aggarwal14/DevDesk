@@ -79,3 +79,37 @@ function loadTheme() {
     return localStorage.getItem("theme");
 
 }
+// ===============================
+// Dashboard Storage
+// ===============================
+
+function saveStats(stats) {
+
+    localStorage.setItem(
+        "devdeskStats",
+        JSON.stringify(stats)
+    );
+
+}
+
+function loadStats() {
+
+    let stats = localStorage.getItem("devdeskStats");
+
+    if (stats) {
+
+        return JSON.parse(stats);
+
+    }
+
+    return {
+
+        notes: 0,
+
+        focus: 0,
+
+        pomodoro: 0
+
+    };
+
+}

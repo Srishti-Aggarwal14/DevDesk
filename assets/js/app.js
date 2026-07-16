@@ -90,6 +90,21 @@ let pauseTimerBtn = document.getElementById("pauseTimer");
 let resetTimerBtn = document.getElementById("resetTimer");
 
 let motivation = document.getElementById("motivation");
+// ===============================
+// Dashboard Elements
+// ===============================
+
+let notesCount = document.getElementById("notesCount");
+
+let focusCount = document.getElementById("focusCount");
+
+let pomodoroCount = document.getElementById("pomodoroCount");
+
+let progressFill = document.getElementById("progressFill");
+
+let progressText = document.getElementById("progressText");
+
+let stats = loadStats();
 
 const morningQuotes = [
 
@@ -276,7 +291,39 @@ function updateTimerDisplay() {
     console.log(timerDisplay.style.color);
 
 }
+// ===============================
+// Dashboard
+// ===============================
 
+function updateDashboard() {
+
+    notesCount.textContent = stats.notes;
+
+    focusCount.textContent = stats.focus;
+
+    pomodoroCount.textContent = stats.pomodoro;
+
+    updateProgress();
+
+    saveStats(stats);
+
+}
+function updateProgress() {
+
+    let completed = stats.notes + stats.focus + stats.pomodoro;
+
+    let max = 15;
+
+    let percentage = Math.min(
+        Math.round((completed / max) * 100),
+        100
+    );
+
+    progressFill.style.width = percentage + "%";
+
+    progressText.textContent = percentage + "%";
+
+}
 
 
 // ===============================
@@ -310,6 +357,10 @@ function startPomodoro() {
             isRunning = false;
 
             timerDisplay.textContent = "✅ Completed";
+
+            stats.pomodoro++;
+
+updateDashboard();
 
             startTimerBtn.disabled = false;
             pauseTimerBtn.disabled = true;
@@ -408,6 +459,7 @@ displayNotes();
 updateDateTime();
 
 updateTimerDisplay();
+updateDashboard();
 pauseTimerBtn.disabled = true;
 
 resetTimerBtn.disabled = true;

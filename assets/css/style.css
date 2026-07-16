@@ -541,3 +541,166 @@ button:disabled {
     cursor: not-allowed;
 
 }
+/* =====================================
+   PRODUCTIVITY DASHBOARD
+===================================== */
+
+.dashboard-card{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    background:#f8fafc;
+
+    box-shadow:0 5px 12px rgba(0,0,0,0.08);
+
+}
+
+.dashboard-card h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.stats{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.stat-box{
+
+    flex:1;
+
+    min-width:120px;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    background:white;
+
+    text-align:center;
+
+    transition:0.3s;
+
+    box-shadow:0 3px 8px rgba(0,0,0,0.08);
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.stat-box h3{
+
+    font-size:32px;
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+}
+
+.stat-box p{
+
+    font-size:16px;
+
+    color:#555;
+
+}
+
+
+/* =====================================
+   DARK MODE
+===================================== */
+
+.dark-mode .dashboard-card{
+
+    background:#374151;
+
+}
+
+.dark-mode .stat-box{
+
+    background:#4b5563;
+
+}
+
+.dark-mode .stat-box p{
+
+    color:white;
+
+}
+
+.dark-mode .stat-box h3{
+
+    color:#60a5fa;
+
+}
+/* ===============================
+   Progress Bar
+=============================== */
+
+.progress-section{
+
+    margin-top:30px;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:20px;
+
+    background:#d1d5db;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-top:10px;
+
+}
+
+#progressFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:#22c55e;
+
+    transition:0.5s;
+
+}
+
+#progressText{
+
+    text-align:center;
+
+    margin-top:10px;
+
+    font-weight:bold;
+
+}
+
+.dark-mode .progress-bar{
+
+    background:#6b7280;
+
+}

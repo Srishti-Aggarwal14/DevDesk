@@ -41,6 +41,10 @@ function updateFocus() {
     // Update UI
 
     updateTagline();
+    // Dashboard
+stats.focus++;
+
+updateDashboard();
 
     // Clear Input
 

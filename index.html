@@ -25,37 +25,41 @@
 
         <nav class="navbar">
 
-    <h2>🚀 DevDesk</h2>
+            <h2>🚀 DevDesk</h2>
 
-    <div class="nav-right">
+            <div class="nav-right">
 
-        <div class="date-time">
+                <div class="date-time">
 
-            <p id="currentDate"></p>
+                    <p id="currentDate"></p>
 
-            <p id="currentTime"></p>
+                    <p id="currentTime"></p>
 
-        </div>
+                </div>
 
-        <button id="themeBtn">
-            🌙
-        </button>
+                <button id="themeBtn">
+                    🌙
+                </button>
 
-    </div>
+            </div>
 
-</nav>
+        </nav>
 
-        <!-- Heading -->
+        <!-- ===========================
+             Greeting
+        ============================ -->
 
         <div class="greeting-section">
 
-    <h1 id="heading"></h1>
+            <h1 id="heading"></h1>
 
-    <p id="motivation"></p>
+            <p id="motivation"></p>
 
-</div>
+        </div>
 
-        <!-- Focus -->
+        <!-- ===========================
+             Today's Focus
+        ============================ -->
 
         <div class="focus-card">
 
@@ -76,7 +80,9 @@
 
         </div>
 
-        <!-- Notes -->
+        <!-- ===========================
+             Quick Notes
+        ============================ -->
 
         <div class="notes-card">
 
@@ -96,43 +102,100 @@
             <ul id="notesList"></ul>
 
         </div>
+
         <!-- ===========================
-     Pomodoro Timer
-=========================== -->
+             Pomodoro Timer
+        ============================ -->
 
-<div class="timer-card">
+        <div class="timer-card">
 
-    <h2>🍅 Pomodoro Timer</h2>
+            <h2>🍅 Pomodoro Timer</h2>
 
-    <h1 id="timerDisplay">
+            <h1 id="timerDisplay">
 
-        25:00
+                25:00
 
-    </h1>
+            </h1>
 
-    <div class="timer-buttons">
+            <div class="timer-buttons">
 
-        <button id="startTimer">
+                <button id="startTimer">
 
-            ▶️ Start
+                    ▶️ Start
 
-        </button>
+                </button>
 
-        <button id="pauseTimer">
+                <button id="pauseTimer">
 
-            ⏸ Pause
+                    ⏸ Pause
 
-        </button>
+                </button>
 
-        <button id="resetTimer">
+                <button id="resetTimer">
 
-            🔄 Reset
+                    🔄 Reset
 
-        </button>
+                </button>
 
-    </div>
+            </div>
 
-</div>
+        </div>
+
+        <!-- ===========================
+             Productivity Dashboard
+        ============================ -->
+
+        <div class="dashboard-card">
+
+            <h2>📊 Productivity Dashboard</h2>
+
+            <div class="stats">
+
+                <div class="stat-box">
+
+                    <h3 id="notesCount">0</h3>
+
+                    <p>Notes</p>
+
+                </div>
+
+                <div class="stat-box">
+
+                    <h3 id="focusCount">0</h3>
+
+                    <p>Focus Updates</p>
+
+                </div>
+
+                <div class="stat-box">
+
+                    <h3 id="pomodoroCount">0</h3>
+
+                    <p>Pomodoros</p>
+
+                </div>
+
+            </div>
+
+            <!-- ===========================
+                 Daily Progress
+            ============================ -->
+
+            <div class="progress-section">
+
+                <h3>📈 Daily Progress</h3>
+
+                <div class="progress-bar">
+
+                    <div id="progressFill"></div>
+
+                </div>
+
+                <p id="progressText">0%</p>
+
+            </div>
+
+        </div>
 
     </div>
 
