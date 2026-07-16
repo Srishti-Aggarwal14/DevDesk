@@ -1202,3 +1202,120 @@ localStorage.getItem()
 ### Theme Persistence
 
 The application remembers the user's preferred theme even after refreshing or reopening the browser.
+# Day 19 - Pomodoro Timer
+
+## Objective
+
+Build a Pomodoro timer to improve productivity.
+
+## What is the Pomodoro Technique?
+
+A time management technique where you:
+
+- Work for 25 minutes
+- Take a 5-minute break
+- Repeat
+
+## Features Planned
+
+- Start Timer
+- Pause Timer
+- Reset Timer
+- Countdown
+- Session Counter
+- Local Storage
+- Productivity Statistics
+
+## New Concepts
+
+- setInterval()
+- clearInterval()
+- Timer State
+- Countdown Logic
+
+## Functions Added
+
+### updateTimerDisplay()
+
+Converts total seconds into MM:SS format.
+
+### startPomodoro()
+
+Starts the countdown using setInterval().
+
+### pausePomodoro()
+
+Stops the timer using clearInterval().
+
+### resetPomodoro()
+
+Resets the timer back to 25 minutes.
+
+---
+
+## Concepts Learned
+
+- setInterval()
+- clearInterval()
+- padStart()
+- Countdown Logic
+- Timer State
+
+🎤 Interview Questions
+Q1. Why did you use setInterval()?
+
+Answer:
+It repeatedly executes a function after a fixed interval. I used it to decrease the timer every second and update the UI.
+
+Q2. Why did you use clearInterval()?
+
+Answer:
+To stop the running timer when the user pauses, resets, or when the countdown finishes.
+
+Q3. Why did you use isRunning?
+
+Answer:
+It prevents multiple intervals from being created if the Start button is clicked repeatedly, ensuring only one timer runs at a time.
+
+---
+
+## Challenges Completed
+
+### Challenge 1
+
+Disabled the Start button while the timer is running to prevent multiple intervals.
+
+### Challenge 2
+
+Disabled the Pause button until the timer starts.
+
+### Challenge 3
+
+Displayed "Completed" for 2 seconds before resetting.
+
+### Bonus Challenge
+
+Changed the timer color dynamically based on remaining time.
+
+- Blue → More than 10 minutes
+- Orange → 5 to 10 minutes
+- Red → Less than 5 minutes
+
+🎤 Interview Questions
+Q1. Why did you disable the Start button?
+
+Answer:
+
+To improve user experience and prevent users from accidentally starting multiple timer instances.
+
+Q2. Why use setTimeout() after completion?
+
+Answer:
+
+setTimeout() delays execution once. I used it to display the completion message for 2 seconds before resetting the timer.
+
+Q3. Why change the timer color?
+
+Answer:
+
+It provides visual feedback about urgency, making the timer easier to interpret without reading the exact time.

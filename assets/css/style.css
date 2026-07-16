@@ -462,3 +462,82 @@ button:hover{
     border-bottom:2px solid #374151;
 
 }
+/* =====================================
+   POMODORO TIMER
+===================================== */
+
+/* =====================================
+   POMODORO TIMER
+===================================== */
+
+.timer-card {
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    background: #f8fafc;
+
+    text-align: center;
+
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+
+}
+
+.timer-card h2 {
+
+    margin-bottom: 20px;
+
+}
+
+#timerDisplay {
+
+    font-size: 55px;
+
+    color: #2563eb;
+
+    margin-bottom: 25px;
+
+    transition: color 0.3s;
+
+}
+
+.timer-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+.timer-buttons button {
+
+    min-width: 120px;
+
+}
+
+.dark-mode .timer-card {
+
+    background: #374151;
+
+}
+
+.dark-mode #timerDisplay {
+
+    color: #60a5fa;
+
+}
+
+button:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+}

@@ -18,6 +18,17 @@ let selectedQuote = "";
 let currentGreetingPeriod = "";
 
 
+// ===============================
+// Pomodoro Variables
+// ===============================
+
+let timer;
+
+let totalSeconds = 25 *60;
+
+let isRunning = false;
+
+
 // -------------------------------
 // Load Stored Data
 // -------------------------------
@@ -69,6 +80,14 @@ let currentDate = document.getElementById("currentDate");
 let currentTime = document.getElementById("currentTime");
 
 let themeBtn = document.getElementById("themeBtn");
+
+let timerDisplay = document.getElementById("timerDisplay");
+
+let startTimerBtn = document.getElementById("startTimer");
+
+let pauseTimerBtn = document.getElementById("pauseTimer");
+
+let resetTimerBtn = document.getElementById("resetTimer");
 
 let motivation = document.getElementById("motivation");
 
@@ -220,6 +239,139 @@ function updateDateTime() {
     greetUser();
 
 }
+// ===============================
+// Timer Display
+// ===============================
+
+function updateTimerDisplay() {
+
+    let minutes = Math.floor(totalSeconds / 60);
+
+    let seconds = totalSeconds % 60;
+
+    minutes = String(minutes).padStart(2, "0");
+    seconds = String(seconds).padStart(2, "0");
+
+    timerDisplay.textContent = `${minutes}:${seconds}`;
+
+    if (totalSeconds > 600) {
+
+        timerDisplay.style.color = "#2563eb";
+
+    }
+
+    else if (totalSeconds > 300) {
+
+        timerDisplay.style.color = "#f59e0b";
+
+    }
+
+    else {
+
+        timerDisplay.style.color = "#ef4444";
+
+    }
+
+    console.log(totalSeconds);
+    console.log(timerDisplay.style.color);
+
+}
+
+
+
+// ===============================
+// Start Timer
+// ===============================
+
+// ===============================
+// Start Timer
+// ===============================
+
+function startPomodoro() {
+
+    if (isRunning) return;
+
+    isRunning = true;
+
+    startTimerBtn.disabled = true;
+    pauseTimerBtn.disabled = false;
+    resetTimerBtn.disabled = false;
+
+    timer = setInterval(function () {
+
+        totalSeconds--;
+
+        updateTimerDisplay();
+
+        if (totalSeconds <= 0) {
+
+            clearInterval(timer);
+
+            isRunning = false;
+
+            timerDisplay.textContent = "✅ Completed";
+
+            startTimerBtn.disabled = false;
+            pauseTimerBtn.disabled = true;
+            resetTimerBtn.disabled = true;
+
+            setTimeout(function () {
+
+                alert("🎉 Pomodoro Completed!");
+
+                totalSeconds = 25 * 60; 
+
+                updateTimerDisplay();
+
+            }, 2000);
+
+        }
+
+    }, 1000);
+
+} //  <-- THIS WAS MISSING
+
+// ===============================
+// Pause Timer
+// ===============================
+
+// ===============================
+// Pause Timer
+// ===============================
+function pausePomodoro() {
+
+    clearInterval(timer);
+
+    isRunning = false;
+
+    startTimerBtn.disabled = false;
+
+    pauseTimerBtn.disabled = true;
+
+}
+
+
+
+// ===============================
+// Reset Timer
+// ===============================
+
+function resetPomodoro() {
+
+    clearInterval(timer);
+
+    isRunning = false;
+
+    
+    totalSeconds = 25 * 60;
+
+    updateTimerDisplay();
+
+    startTimerBtn.disabled = false;
+    pauseTimerBtn.disabled = true;
+    resetTimerBtn.disabled = true;
+
+}
 function toggleTheme() {
 
     document.body.classList.toggle("dark-mode");
@@ -254,6 +406,11 @@ updateTagline();
 displayNotes();
 
 updateDateTime();
+
+updateTimerDisplay();
+pauseTimerBtn.disabled = true;
+
+resetTimerBtn.disabled = true;
 // -------------------------------
 // Load Saved Theme
 // -------------------------------
@@ -285,3 +442,9 @@ updateBtn.addEventListener("click", updateFocus);
 addNoteBtn.addEventListener("click", addNote);
 
 themeBtn.addEventListener("click", toggleTheme);
+
+startTimerBtn.addEventListener("click",startPomodoro);
+
+pauseTimerBtn.addEventListener("click",pausePomodoro);
+
+resetTimerBtn.addEventListener("click",resetPomodoro);
