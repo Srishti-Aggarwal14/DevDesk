@@ -704,3 +704,440 @@ button:disabled {
     background:#6b7280;
 
 }
+/* =====================================
+   TASK MANAGER
+===================================== */
+
+.task-card{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    background:#f8fafc;
+
+    box-shadow:0 5px 12px rgba(0,0,0,0.08);
+
+}
+
+.task-card h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+.task-card input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    box-sizing:border-box;
+
+}
+
+.task-card button{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    margin-bottom:20px;
+
+    transition:0.3s;
+
+}
+
+.task-card button:hover{
+
+    background:#1d4ed8;
+
+}
+
+#taskList{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+#taskList li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px;
+
+    margin-bottom:10px;
+
+    background:white;
+
+    border-radius:10px;
+
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+
+}
+
+.task-buttons{
+
+    display:flex;
+
+    gap:8px;
+
+}
+
+.complete-btn{
+
+    background:#22c55e;
+
+    color:white;
+
+    border:none;
+
+    padding:6px 10px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+}
+
+.delete-btn{
+
+    background:#ef4444;
+
+    color:white;
+
+    border:none;
+
+    padding:6px 10px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+}
+
+.completed{
+
+    text-decoration:line-through;
+
+    opacity:0.6;
+
+}
+
+.dark-mode .task-card{
+
+    background:#374151;
+
+}
+
+.dark-mode #taskList li{
+
+    background:#4b5563;
+
+    color:white;
+
+}
+/* ===============================
+   Task Inputs
+=============================== */
+
+.task-card select,
+.task-card input[type="date"]{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    box-sizing:border-box;
+
+}
+
+.priority-high{
+
+    color:#dc2626;
+
+    font-weight:bold;
+
+}
+
+.priority-medium{
+
+    color:#f59e0b;
+
+    font-weight:bold;
+
+}
+
+.priority-low{
+
+    color:#16a34a;
+
+    font-weight:bold;
+
+}
+
+.task-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+
+}
+/* ===============================
+   Task Filters
+=============================== */
+
+.filter-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+}
+
+.filter-buttons button{
+
+    flex:1;
+
+    padding:10px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:#2563eb;
+
+    color:white;
+
+    transition:0.3s;
+
+}
+
+.filter-buttons button:hover{
+
+    background:#1d4ed8;
+
+}
+/* ===============================
+   Search Box
+=============================== */
+
+#searchTask{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:20px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    box-sizing:border-box;
+
+}
+
+.dark-mode #searchTask{
+
+    background:#4b5563;
+
+    color:white;
+
+    border:1px solid #6b7280;
+
+}
+/* ===============================
+   Sort Section
+=============================== */
+
+.sort-section{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+}
+
+.sort-section label{
+
+    font-weight:bold;
+
+}
+
+.sort-section select{
+
+    flex:1;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    border:1px solid #d1d5db;
+
+    font-size:15px;
+
+}
+
+.dark-mode .sort-section select{
+
+    background:#4b5563;
+
+    color:white;
+
+}
+/* ===============================
+   Task Analytics
+=============================== */
+
+.analytics-card{
+
+    margin-top:30px;
+
+    background:#f8fafc;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 12px rgba(0,0,0,0.08);
+
+}
+
+.analytics-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.analytics-box{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    box-shadow:0 3px 8px rgba(0,0,0,0.08);
+
+}
+
+.analytics-box h3{
+
+    color:#2563eb;
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:20px;
+
+    background:#d1d5db;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-top:25px;
+
+}
+
+#progressFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:#22c55e;
+
+    transition:0.4s;
+
+}
+
+/* ===============================
+   Dark Mode
+=============================== */
+
+.dark-mode .analytics-card{
+
+    background:#374151;
+
+}
+
+.dark-mode .analytics-box{
+
+    background:#4b5563;
+
+    color:white;
+
+}
+
+.dark-mode .progress-bar{
+
+    background:#6b7280;
+
+}

@@ -113,3 +113,33 @@ function loadStats() {
     };
 
 }
+// ===============================
+// Task Storage
+// ===============================
+
+function saveTasks() {
+
+    localStorage.setItem(
+        "devdeskTasks",
+        JSON.stringify(tasks)
+    );
+
+}
+
+function loadTasks() {
+
+    let storedTasks = localStorage.getItem("devdeskTasks");
+
+    if (storedTasks) {
+
+        tasks = JSON.parse(storedTasks);
+
+    }
+
+    else {
+
+        tasks = [];
+
+    }
+
+}

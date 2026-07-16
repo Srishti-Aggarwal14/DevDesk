@@ -196,12 +196,150 @@
             </div>
 
         </div>
+        <!-- ===========================
+     Task Manager
+=========================== -->
+
+<!-- ===========================
+     Task Manager
+=========================== -->
+
+<div class="task-card">
+
+    <h2>✅ Task Manager</h2>
+
+    <input
+        id="taskInput"
+        type="text"
+        placeholder="Enter a task...">
+
+    <select id="priority">
+
+        <option value="High">🔴 High Priority</option>
+
+        <option value="Medium">🟡 Medium Priority</option>
+
+        <option value="Low">🟢 Low Priority</option>
+
+    </select>
+
+    <input
+        type="date"
+        id="dueDate">
+
+    <button id="addTaskBtn">
+
+        Add Task
+
+    </button>
+    <div class="filter-buttons">
+
+    <button id="allTasksBtn">
+        All
+    </button>
+
+    <button id="pendingBtn">
+        Pending
+    </button>
+
+    <button id="completedBtn">
+        Completed
+    </button>
+    <input
+    type="text"
+    id="searchTask"
+    placeholder="🔍 Search tasks...">
+    <div class="sort-section">
+
+    <label for="sortTasks">
+        Sort By
+    </label>
+
+    <select id="sortTasks">
+
+        <option value="default">
+            Default
+        </option>
+
+        <option value="priority">
+            Priority
+        </option>
+
+        <option value="date">
+            Due Date
+        </option>
+
+        <option value="az">
+            A → Z
+        </option>
+
+    </select>
+
+</div>
+<!-- ===========================
+     Task Analytics
+=========================== -->
+
+<div class="analytics-card">
+
+    <h2>📊 Task Analytics</h2>
+
+    <div class="analytics-grid">
+
+        <div class="analytics-box">
+
+            <h3 id="totalTasks">0</h3>
+
+            <p>Total Tasks</p>
+
+        </div>
+
+        <div class="analytics-box">
+
+            <h3 id="completedTasks">0</h3>
+
+            <p>Completed</p>
+
+        </div>
+
+        <div class="analytics-box">
+
+            <h3 id="pendingTasks">0</h3>
+
+            <p>Pending</p>
+
+        </div>
+
+        <div class="analytics-box">
+
+            <h3 id="completionRate">0%</h3>
+
+            <p>Completion</p>
+
+        </div>
+
+    </div>
+
+    <div class="progress-bar">
+
+        <div id="progressFill"></div>
+
+    </div>
+
+</div>
+
+</div>
+
+    <ul id="taskList"></ul>
+
+</div>
 
     </div>
 
     <script src="assets/js/storage.js"></script>
     <script src="assets/js/focus.js"></script>
     <script src="assets/js/notes.js"></script>
+    <script src="assets/js/tasks.js"></script>
     <script src="assets/js/app.js"></script>
 
 </body>

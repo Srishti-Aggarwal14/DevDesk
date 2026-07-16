@@ -1335,3 +1335,68 @@ It provides visual feedback about urgency, making the timer easier to interpret 
 - Completion message after timer ends
 - Timer resets automatically after completion
 - Integrated with Dark Mode
+
+# Milestone 4 - Productivity Dashboard
+
+## Features Added
+
+### 📊 Productivity Dashboard
+- Created a dashboard to display productivity statistics.
+- Added three live counters:
+  - 📝 Notes Count
+  - 🎯 Focus Updates Count
+  - 🍅 Pomodoro Sessions Count
+
+### 💾 Local Storage
+- Dashboard statistics are stored in Local Storage.
+- Statistics remain available even after refreshing the page.
+
+### 📈 Daily Progress Bar
+- Added a dynamic progress bar.
+- Progress is calculated based on:
+  - Notes Added
+  - Focus Updates
+  - Completed Pomodoro Sessions
+- Maximum daily progress is capped at 100%.
+- Progress bar updates automatically whenever statistics change.
+
+### 🎨 UI Improvements
+- Responsive dashboard layout.
+- Hover animation for statistic cards.
+- Dark Mode support for dashboard and progress bar.
+
+## Concepts Learned
+
+- DOM Manipulation
+- JavaScript Objects
+- Local Storage
+- Updating UI Dynamically
+- Progress Bar using CSS
+- JavaScript Functions
+- Event Handling
+- Responsive Design
+
+# Milestone 5
+
+## Features Added
+
+- Task Manager
+- Task Priority
+- Due Date
+- Task Filters
+- Live Search
+- Task Sorting
+- Task Analytics Dashboard
+- Completion Progress Bar
+
+## JavaScript Concepts Learned
+
+- Arrays of Objects
+- CRUD Operations
+- Dynamic DOM Manipulation
+- Event Listeners
+- Local Storage
+- Array Sorting
+- Array Filtering
+- Searching
+- Progress Calculations
