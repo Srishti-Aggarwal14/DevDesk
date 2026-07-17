@@ -31,15 +31,9 @@ let completedBtn = document.getElementById("completedBtn");
 // Analytics Elements
 // ===============================
 
-let totalTasks = document.getElementById("totalTasks");
 
-let completedTasks = document.getElementById("completedTasks");
 
-let pendingTasks = document.getElementById("pendingTasks");
 
-let completionRate = document.getElementById("completionRate");
-
-let progressFill = document.getElementById("progressFill");
 
 // -------------------------------
 // Add Task
@@ -75,74 +69,22 @@ function addTask() {
 
     saveTasks();
 
-    displayTasks();
+displayTasks();
 
-    taskInput.value = "";
+if (typeof updateInsights === "function") {
+    updateInsights();
+}
 
-    taskInput.focus();
+taskInput.value = "";
+
+taskInput.focus();
 
 }
 // ===============================
 // Update Analytics
 // ===============================
 
-function updateAnalytics() {
 
-    let total = tasks.length;
-
-    let completed = 0;
-
-    for (let i = 0; i < tasks.length; i++) {
-
-        if (tasks[i].completed) {
-
-            completed++;
-
-        }
-
-    }
-
-    let pending = total - completed;
-
-    let percentage = 0;
-
-    if (total > 0) {
-
-        percentage = Math.round((completed / total) * 100);
-
-    }
-
-    totalTasks.textContent = total;
-
-    completedTasks.textContent = completed;
-
-    pendingTasks.textContent = pending;
-
-    completionRate.textContent = percentage + "%";
-
-    progressFill.style.width = percentage + "%";
-
-    // Change progress bar color
-
-    if (percentage < 40) {
-
-        progressFill.style.background = "#ef4444";
-
-    }
-
-    else if (percentage < 80) {
-
-        progressFill.style.background = "#f59e0b";
-
-    }
-
-    else {
-
-        progressFill.style.background = "#22c55e";
-
-    }
-
-}
 
 // -------------------------------
 // Display Tasks
@@ -208,7 +150,6 @@ function displayTasks() {
 
     taskList.appendChild(li);
 
-    updateAnalytics();
 
     return;
 
@@ -320,6 +261,10 @@ function displayTasks() {
 
             displayTasks();
 
+            if (typeof updateInsights === "function") {
+    updateInsights();
+}
+
         });
 
         let deleteBtn = document.createElement("button");
@@ -340,6 +285,10 @@ function displayTasks() {
 
                 displayTasks();
 
+                if (typeof updateInsights === "function") {
+    updateInsights();
+}
+
             }
 
         });
@@ -355,7 +304,7 @@ function displayTasks() {
         taskList.appendChild(li);
 
     }
-    updateAnalytics();
+    
 
 }
 
@@ -364,6 +313,10 @@ function displayTasks() {
 // -------------------------------
 
 displayTasks();
+
+if (typeof updateInsights === "function") {
+    updateInsights();
+}
 
 // -------------------------------
 // Event Listeners

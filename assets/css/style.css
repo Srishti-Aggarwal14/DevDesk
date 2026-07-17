@@ -1365,3 +1365,106 @@ button:disabled {
     color:white;
 
 }
+/* ===============================
+   Productivity Insights
+=============================== */
+
+.insights-card{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    background:#f8fafc;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 12px rgba(0,0,0,0.08);
+
+}
+
+.insight-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+
+    gap:20px;
+
+    margin-top:20px;
+
+}
+
+.insight-box{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    text-align:center;
+
+    box-shadow:0 3px 8px rgba(0,0,0,0.08);
+
+}
+
+.insight-box h3{
+
+    font-size:30px;
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:18px;
+
+    background:#e5e7eb;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-top:15px;
+
+}
+
+#insightProgress{
+
+    width:0%;
+
+    height:100%;
+
+    background:#22c55e;
+
+    transition:0.4s;
+
+}
+
+.dark-mode .insights-card{
+
+    background:#374151;
+
+    color:white;
+
+}
+
+.dark-mode .insight-box{
+
+    background:#4b5563;
+
+    color:white;
+
+}
+
+.dark-mode .progress-bar{
+
+    background:#6b7280;
+
+}

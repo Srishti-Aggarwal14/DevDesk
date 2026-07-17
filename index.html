@@ -141,43 +141,7 @@
 
         </div>
 
-        <!-- ===========================
-             Productivity Dashboard
-        ============================ -->
-
-        <div class="dashboard-card">
-
-            <h2>📊 Productivity Dashboard</h2>
-
-            <div class="stats">
-
-                <div class="stat-box">
-
-                    <h3 id="notesCount">0</h3>
-
-                    <p>Notes</p>
-
-                </div>
-
-                <div class="stat-box">
-
-                    <h3 id="focusCount">0</h3>
-
-                    <p>Focus Updates</p>
-
-                </div>
-
-                <div class="stat-box">
-
-                    <h3 id="pomodoroCount">0</h3>
-
-                    <p>Pomodoros</p>
-
-                </div>
-
-            </div>
-
-        </div>
+        
 
         <!-- ===========================
              Task Manager
@@ -255,57 +219,7 @@
 
         </div>
 
-        <!-- ===========================
-             Task Analytics
-        ============================ -->
-
-        <div class="analytics-card">
-
-            <h2>📊 Task Analytics</h2>
-
-            <div class="analytics-grid">
-
-                <div class="analytics-box">
-
-                    <h3 id="totalTasks">0</h3>
-
-                    <p>Total Tasks</p>
-
-                </div>
-
-                <div class="analytics-box">
-
-                    <h3 id="completedTasks">0</h3>
-
-                    <p>Completed</p>
-
-                </div>
-
-                <div class="analytics-box">
-
-                    <h3 id="pendingTasks">0</h3>
-
-                    <p>Pending</p>
-
-                </div>
-
-                <div class="analytics-box">
-
-                    <h3 id="completionRate">0%</h3>
-
-                    <p>Completion</p>
-
-                </div>
-
-            </div>
-
-            <div class="progress-bar">
-
-                <div id="progressFill"></div>
-
-            </div>
-
-        </div>
+        
 
         <!-- ===========================
              Weather Widget
@@ -391,18 +305,79 @@
     <ul id="plannerList"></ul>
 
 </div>
+<!-- ===========================
+     Productivity Dashboard
+=========================== -->
+
+<div class="insights-card">
+
+    <h2>🚀 Productivity Dashboard</h2>
+
+    <div class="insight-grid">
+
+        <div class="insight-box">
+            <h3 id="insightNotes">0</h3>
+            <p>Notes</p>
+        </div>
+
+        <div class="insight-box">
+            <h3 id="insightFocus">0</h3>
+            <p>Focus Updates</p>
+        </div>
+
+        <div class="insight-box">
+            <h3 id="insightPomodoro">0</h3>
+            <p>Pomodoros</p>
+        </div>
+
+        <div class="insight-box">
+            <h3 id="insightPlans">0</h3>
+            <p>Plans</p>
+        </div>
+
+    </div>
+
+    <br>
+
+    <h3>
+        Overall Productivity
+        <span id="insightPercent">0%</span>
+    </h3>
+
+    <div class="progress-bar">
+        <div id="insightProgress"></div>
+    </div>
+
+    <br>
+
+    <h3 id="productivityStatus">
+        💪 Let's get productive!
+    </h3>
+
+    <p id="motivationLine">
+        🚀 Keep Building!
+    </p>
+
+</div>
+    
 
     </div>
 
     <script src="assets/js/storage.js"></script>
-    <script src="assets/js/focus.js"></script>
-    <script src="assets/js/notes.js"></script>
-    <script src="assets/js/tasks.js"></script>
-    <script src="assets/js/planner.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/weather.js"></script>
+
+<script src="assets/js/app.js"></script>
+
+<script src="assets/js/focus.js"></script>
+<script src="assets/js/notes.js"></script>
+<script src="assets/js/tasks.js"></script>
+<script src="assets/js/planner.js"></script>
+<script src="assets/js/insights.js"></script>
+<script src="assets/js/weather.js"></script>
+
+
 
 </body>
 
 </html>
+
 

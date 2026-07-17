@@ -41,14 +41,17 @@ function addNote() {
 
     stats.notes++;
 
-updateDashboard();
-
     saveNotes();
+
+    updateDashboard();
+
+    if (typeof updateInsights === "function") {
+        updateInsights();
+    }
 
     displayNotes();
 
     noteInput.value = "";
-
     noteInput.focus();
 
 }
@@ -72,6 +75,10 @@ function displayNotes() {
 
         notesList.appendChild(li);
 
+        if (typeof updateInsights === "function") {
+            updateInsights();
+        }
+
         return;
 
     }
@@ -82,16 +89,13 @@ function displayNotes() {
 
         li.classList.add("note-item");
 
-
         let noteText = document.createElement("span");
 
         noteText.textContent = "📝 " + notes[i];
 
-
         let actions = document.createElement("div");
 
         actions.classList.add("actions");
-
 
         // ==========================
         // Edit Button
@@ -104,7 +108,6 @@ function displayNotes() {
         editBtn.classList.add("edit-btn");
 
         editBtn.dataset.index = i;
-
 
         editBtn.addEventListener("click", function () {
 
@@ -146,8 +149,11 @@ function displayNotes() {
 
             displayNotes();
 
-        });
+            if (typeof updateInsights === "function") {
+                updateInsights();
+            }
 
+        });
 
         // ==========================
         // Delete Button
@@ -160,7 +166,6 @@ function displayNotes() {
         deleteBtn.classList.add("delete-btn");
 
         deleteBtn.dataset.index = i;
-
 
         deleteBtn.addEventListener("click", function () {
 
@@ -177,16 +182,22 @@ function displayNotes() {
             }
 
             notes.splice(index, 1);
-            stats.notes--;
 
-updateDashboard();
+            if (stats.notes > 0) {
+                stats.notes--;
+            }
 
             saveNotes();
+
+            updateDashboard();
+
+            if (typeof updateInsights === "function") {
+                updateInsights();
+            }
 
             displayNotes();
 
         });
-
 
         actions.appendChild(editBtn);
 
@@ -223,3 +234,4 @@ noteInput.addEventListener("keydown", function (event) {
 // -------------------------------
 
 addNoteBtn.addEventListener("click", addNote);
+displayNotes();

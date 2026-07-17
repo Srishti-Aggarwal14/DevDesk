@@ -4,17 +4,21 @@
 // Handles Today's Focus
 // ===============================
 
-
-// Update the tagline on screen
+// -------------------------------
+// Update Tagline
+// -------------------------------
 
 function updateTagline() {
 
-    tagline.textContent = todaysFocus;
+    if (typeof tagline !== "undefined" && tagline) {
+        tagline.textContent = todaysFocus;
+    }
 
 }
 
-
+// -------------------------------
 // Update Today's Focus
+// -------------------------------
 
 function updateFocus() {
 
@@ -23,41 +27,44 @@ function updateFocus() {
     if (newFocus === "") {
 
         alert("Please enter today's focus.");
-
         focusInput.focus();
-
         return;
 
     }
 
-    // Update application state
+    // Update state
 
-    todaysFocus = `Today's Focus: ${newFocus}`;
+    todaysFocus = "Today's Focus: " + newFocus;
 
-    // Save in Local Storage
+    // Save
 
     saveFocus();
 
     // Update UI
 
     updateTagline();
-    // Dashboard
-stats.focus++;
 
-updateDashboard();
+    // Dashboard Stats
 
-    // Clear Input
+    stats.focus++;
+
+    updateDashboard();
+
+    if (typeof updateInsights === "function") {
+        updateInsights();
+    }
+
+    // Clear input
 
     focusInput.value = "";
-
-    // Bring cursor back
 
     focusInput.focus();
 
 }
 
-
-// Allow Enter key
+// -------------------------------
+// Enter Key
+// -------------------------------
 
 focusInput.addEventListener("keydown", function (event) {
 
@@ -67,4 +74,17 @@ focusInput.addEventListener("keydown", function (event) {
 
     }
 
+});
+updateTagline();
+
+// -------------------------------
+// Events
+// -------------------------------
+
+updateBtn.addEventListener("click", updateFocus);
+
+focusInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        updateFocus();
+    }
 });

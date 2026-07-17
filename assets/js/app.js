@@ -100,11 +100,18 @@ let focusCount = document.getElementById("focusCount");
 
 let pomodoroCount = document.getElementById("pomodoroCount");
 
-let progressFill = document.getElementById("progressFill");
+/*let dashboardProgressFill =
+    document.getElementById("progressFill");
 
-let progressText = document.getElementById("progressText");
+let dashboardProgressText =
+    document.getElementById("progressText");*/
 
 let stats = loadStats();
+// ===============================
+// Productivity Insights
+// ===============================
+
+
 
 const morningQuotes = [
 
@@ -297,18 +304,20 @@ function updateTimerDisplay() {
 
 function updateDashboard() {
 
-    notesCount.textContent = stats.notes;
+    // notesCount.textContent = stats.notes;
 
-    focusCount.textContent = stats.focus;
+    // focusCount.textContent = stats.focus;
 
-    pomodoroCount.textContent = stats.pomodoro;
+    // pomodoroCount.textContent = stats.pomodoro;
 
-    updateProgress();
+    /*updateProgress();
+
+    updateInsights();*/
 
     saveStats(stats);
 
 }
-function updateProgress() {
+/*function updateProgress() {
 
     let completed = stats.notes + stats.focus + stats.pomodoro;
 
@@ -319,12 +328,11 @@ function updateProgress() {
         100
     );
 
-    progressFill.style.width = percentage + "%";
+    dashboardProgressFill.style.width = percentage + "%";
 
-    progressText.textContent = percentage + "%";
+    dashboardProgressText.textContent = percentage + "%";
 
-}
-
+}*/
 
 // ===============================
 // Start Timer
@@ -361,6 +369,9 @@ function startPomodoro() {
             stats.pomodoro++;
 
 updateDashboard();
+if (typeof updateInsights === "function") {
+    updateInsights();
+}
 
             startTimerBtn.disabled = false;
             pauseTimerBtn.disabled = true;
@@ -452,13 +463,10 @@ function toggleTheme() {
 
 greetUser();
 
-updateTagline();
-
-displayNotes();
-
 updateDateTime();
 
 updateTimerDisplay();
+
 updateDashboard();
 pauseTimerBtn.disabled = true;
 
@@ -489,14 +497,22 @@ setInterval(updateDateTime, 1000);
 // Event Listeners
 // -------------------------------
 
-updateBtn.addEventListener("click", updateFocus);
+//updateBtn.addEventListener("click", updateFocus);
 
-addNoteBtn.addEventListener("click", addNote);
+//addNoteBtn.addEventListener("click", addNote);
+
+//themeBtn.addEventListener("click", toggleTheme);
+
+// startTimerBtn.addEventListener("click",startPomodoro);
+
+// pauseTimerBtn.addEventListener("click",pausePomodoro);
+
+// resetTimerBtn.addEventListener("click",resetPomodoro);
 
 themeBtn.addEventListener("click", toggleTheme);
 
-startTimerBtn.addEventListener("click",startPomodoro);
+startTimerBtn.addEventListener("click", startPomodoro);
 
-pauseTimerBtn.addEventListener("click",pausePomodoro);
+pauseTimerBtn.addEventListener("click", pausePomodoro);
 
-resetTimerBtn.addEventListener("click",resetPomodoro);
+resetTimerBtn.addEventListener("click", resetPomodoro);

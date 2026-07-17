@@ -1420,3 +1420,12 @@ It provides visual feedback about urgency, making the timer easier to interpret 
 - DOM Manipulation
 - Event Listeners
 - Object Arrays
+
+# Milestone 7 – Productivity Insights
+
+## Features Added
+
+- Dynamic productivity insights.
+- Personalized motivational messages.
+- Messages update automatically based on daily activity.
+- Connected with dashboard statistics.
