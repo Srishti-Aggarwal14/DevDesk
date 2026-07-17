@@ -48,6 +48,16 @@ function addNote() {
     if (typeof updateInsights === "function") {
         updateInsights();
     }
+    if(typeof renderBadges==="function"){
+
+renderBadges();
+
+}
+if(typeof updateChart==="function"){
+
+    updateChart();
+
+}
 
     displayNotes();
 
@@ -78,6 +88,16 @@ function displayNotes() {
         if (typeof updateInsights === "function") {
             updateInsights();
         }
+        if(typeof renderBadges==="function"){
+
+renderBadges();
+
+}
+if(typeof updateChart==="function"){
+
+    updateChart();
+
+}
 
         return;
 
@@ -152,6 +172,16 @@ function displayNotes() {
             if (typeof updateInsights === "function") {
                 updateInsights();
             }
+            if(typeof renderBadges==="function"){
+
+renderBadges();
+
+}
+if(typeof updateChart==="function"){
+
+    updateChart();
+
+}
 
         });
 
@@ -194,6 +224,17 @@ function displayNotes() {
             if (typeof updateInsights === "function") {
                 updateInsights();
             }
+
+            if(typeof renderBadges==="function"){
+
+renderBadges();
+
+}
+if(typeof updateChart==="function"){
+
+    updateChart();
+
+}
 
             displayNotes();
 

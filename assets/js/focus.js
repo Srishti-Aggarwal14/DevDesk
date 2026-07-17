@@ -53,6 +53,16 @@ function updateFocus() {
     if (typeof updateInsights === "function") {
         updateInsights();
     }
+    if(typeof renderBadges==="function"){
+
+renderBadges();
+
+}
+if(typeof updateChart==="function"){
+
+    updateChart();
+
+}
 
     // Clear input
 

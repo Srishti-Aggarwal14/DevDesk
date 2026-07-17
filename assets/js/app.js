@@ -113,67 +113,67 @@ let stats = loadStats();
 
 
 
-const morningQuotes = [
+// const morningQuotes = [
 
-    "💡 Have a productive day ahead!",
+//     "💡 Have a productive day ahead!",
 
-    "☀️ Every small step counts.",
+//     "☀️ Every small step counts.",
 
-    "🚀 Start strong and stay consistent.",
+//     "🚀 Start strong and stay consistent.",
 
-    "📚 Today's effort is tomorrow's success."
+//     "📚 Today's effort is tomorrow's success."
 
-];
+// ];
 
-const afternoonQuotes = [
+// const afternoonQuotes = [
 
-    "💻 Keep going, you're doing great!",
+//     "💻 Keep going, you're doing great!",
 
-    "🌤️ Stay focused on your goals.",
+//     "🌤️ Stay focused on your goals.",
 
-    "⚡ Progress is better than perfection.",
+//     "⚡ Progress is better than perfection.",
 
-    "🎯 One task at a time."
+//     "🎯 One task at a time."
 
-];
+// ];
 
-const eveningQuotes = [
+// const eveningQuotes = [
 
-    "🌇 Finish today's goals with confidence.",
+//     "🌇 Finish today's goals with confidence.",
 
-    "📖 Review what you've learned today.",
+//     "📖 Review what you've learned today.",
 
-    "🏆 Success comes from consistency.",
+//     "🏆 Success comes from consistency.",
 
-    "✨ End the day with satisfaction."
+//     "✨ End the day with satisfaction."
 
-];
+// ];
 
-const nightQuotes = [
+// const nightQuotes = [
 
-    "🌙 Rest well. Tomorrow is another opportunity.",
+//     "🌙 Rest well. Tomorrow is another opportunity.",
 
-    "😴 Recharge yourself for tomorrow.",
+//     "😴 Recharge yourself for tomorrow.",
 
-    "💤 A fresh mind learns faster.",
+//     "💤 A fresh mind learns faster.",
 
-    "⭐ Great work today!"
-];
-function setMotivationalQuote(quotes, period) {
+//     "⭐ Great work today!"
+// ];
+// function setMotivationalQuote(quotes, period) {
 
-    if (currentGreetingPeriod !== period) {
+//     if (currentGreetingPeriod !== period) {
 
-        currentGreetingPeriod = period;
+//         currentGreetingPeriod = period;
 
-        let randomIndex = Math.floor(Math.random() * quotes.length);
+//         let randomIndex = Math.floor(Math.random() * quotes.length);
 
-        selectedQuote = quotes[randomIndex];
+//         selectedQuote = quotes[randomIndex];
 
-    }
+//     }
 
-    motivation.textContent = selectedQuote;
+//     motivation.textContent = selectedQuote;
 
-}
+// }
 
 
 // -------------------------------
@@ -185,52 +185,26 @@ function greetUser() {
     let currentHour = new Date().getHours();
 
     let greeting = "";
-
-let emoji = "";
-
-let quotes = [];
-
-let period = "";
+    let emoji = "";
 
     if (currentHour >= 5 && currentHour < 12) {
-
         greeting = "Good Morning";
         emoji = "🌸";
-        quotes = morningQuotes;
-        period="morning";
-
     }
-
     else if (currentHour >= 12 && currentHour < 17) {
-
         greeting = "Good Afternoon";
         emoji = "🌤️";
-        quotes = afternoonQuotes;
-        period="afternoon";
-
     }
-
     else if (currentHour >= 17 && currentHour < 21) {
-
         greeting = "Good Evening";
         emoji = "🌇";
-        quotes = eveningQuotes;
-        period="evening";
-
     }
-
     else {
-
         greeting = "Good Night";
         emoji = "🌙";
-        quotes = nightQuotes;
-        period="night";
-
     }
 
     heading.textContent = `${emoji} ${greeting}, ${userName}`;
-
-    setMotivationalQuote(quotes,period);
 
 }
 
@@ -258,7 +232,9 @@ function updateDateTime() {
     // BONUS CHALLENGE COMPLETED ✅
     // Greeting updates automatically
 
+    if (heading) {
     greetUser();
+}
 
 }
 // ===============================
@@ -294,8 +270,8 @@ function updateTimerDisplay() {
 
     }
 
-    console.log(totalSeconds);
-    console.log(timerDisplay.style.color);
+    // console.log(totalSeconds);
+    // console.log(timerDisplay.style.color);
 
 }
 // ===============================
@@ -371,6 +347,16 @@ function startPomodoro() {
 updateDashboard();
 if (typeof updateInsights === "function") {
     updateInsights();
+}
+if(typeof renderBadges==="function"){
+
+renderBadges();
+
+}
+if(typeof updateChart==="function"){
+
+    updateChart();
+
 }
 
             startTimerBtn.disabled = false;
@@ -468,6 +454,9 @@ updateDateTime();
 updateTimerDisplay();
 
 updateDashboard();
+if (typeof loadQuote === "function") {
+    loadQuote();
+}
 pauseTimerBtn.disabled = true;
 
 resetTimerBtn.disabled = true;

@@ -6,375 +6,541 @@
     <meta charset="UTF-8">
 
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0">
 
     <title>DevDesk</title>
 
     <link rel="stylesheet"
-          href="assets/css/style.css">
+        href="assets/css/style.css">
 
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <!-- ===========================
-             Navigation
-        ============================ -->
+    <!-- ===========================
+         Navigation
+    ============================ -->
 
-        <nav class="navbar">
+    <nav class="navbar">
 
-            <h2>🚀 DevDesk</h2>
+        <h2>🚀 DevDesk</h2>
 
-            <div class="nav-right">
+        <div class="nav-right">
 
-                <div class="date-time">
+            <div class="date-time">
 
-                    <p id="currentDate"></p>
+                <p id="currentDate"></p>
 
-                    <p id="currentTime"></p>
-
-                </div>
-
-                <button id="themeBtn">
-                    🌙
-                </button>
+                <p id="currentTime"></p>
 
             </div>
 
-        </nav>
-
-        <!-- ===========================
-             Greeting
-        ============================ -->
-
-        <div class="greeting-section">
-
-            <h1 id="heading"></h1>
-
-            <p id="motivation"></p>
-
-        </div>
-
-        <!-- ===========================
-             Today's Focus
-        ============================ -->
-
-        <div class="focus-card">
-
-            <h2>🎯 Today's Focus</h2>
-
-            <p id="tagline"></p>
-
-            <input
-                id="focusInput"
-                type="text"
-                placeholder="Enter today's focus">
-
-            <button id="updateBtn">
-
-                Update Focus
-
+            <button id="themeBtn">
+                🌙
             </button>
 
         </div>
 
-        <!-- ===========================
-             Quick Notes
-        ============================ -->
+    </nav>
 
-        <div class="notes-card">
+    <!-- ===========================
+         Greeting
+    ============================ -->
 
-            <h2>📝 Quick Notes</h2>
+    <div class="greeting-section">
 
-            <input
-                id="noteInput"
-                type="text"
-                placeholder="Write a note...">
+        <h1 id="heading"></h1>
 
-            <button id="addNoteBtn">
+        <p id="motivation"></p>
 
-                Add Note
+    </div>
 
-            </button>
+    <!-- ===========================
+         Dashboard Layout
+    ============================ -->
 
-            <ul id="notesList"></ul>
+    <div class="dashboard">
 
-        </div>
+        <!-- =======================
+             LEFT COLUMN
+        ======================== -->
 
-        <!-- ===========================
-             Pomodoro Timer
-        ============================ -->
+        <div class="left-column">
 
-        <div class="timer-card">
+            <!-- Focus -->
 
-            <h2>🍅 Pomodoro Timer</h2>
+            <div class="focus-card">
 
-            <h1 id="timerDisplay">
+                <h2>🎯 Today's Focus</h2>
 
-                25:00
+                <p id="tagline"></p>
 
-            </h1>
+                <input
+                    id="focusInput"
+                    type="text"
+                    placeholder="Enter today's focus">
 
-            <div class="timer-buttons">
+                <button id="updateBtn">
 
-                <button id="startTimer">
-
-                    ▶️ Start
-
-                </button>
-
-                <button id="pauseTimer">
-
-                    ⏸ Pause
-
-                </button>
-
-                <button id="resetTimer">
-
-                    🔄 Reset
+                    Update Focus
 
                 </button>
 
             </div>
 
-        </div>
+            <!-- Notes -->
 
-        
+            <div class="notes-card">
 
-        <!-- ===========================
-             Task Manager
-        ============================ -->
+                <h2>📝 Quick Notes</h2>
 
-        <div class="task-card">
+                <input
+                    id="noteInput"
+                    type="text"
+                    placeholder="Write a note...">
 
-            <h2>✅ Task Manager</h2>
+                <button id="addNoteBtn">
 
-            <input
-                type="text"
-                id="taskInput"
-                placeholder="Enter a task">
+                    Add Note
 
-            <select id="priority">
+                </button>
 
-                <option>High</option>
+                <ul id="notesList"></ul>
 
-                <option>Medium</option>
+            </div>
 
-                <option>Low</option>
+            <!-- Pomodoro -->
 
-            </select>
+            <div class="timer-card">
 
-            <input
-                type="date"
-                id="dueDate">
+                <h2>🍅 Pomodoro Timer</h2>
 
-            <button id="addTaskBtn">
+                <h1 id="timerDisplay">
 
-                Add Task
-
-            </button>
-
-            <br><br>
-
-            <input
-                type="text"
-                id="searchTask"
-                placeholder="Search task...">
-
-            <select id="sortTasks">
-
-                <option value="default">Sort Tasks</option>
-
-                <option value="priority">Priority</option>
-
-                <option value="date">Due Date</option>
-
-                <option value="az">A → Z</option>
-
-            </select>
-
-            <br><br>
-
-            <button id="allTasksBtn">
-
-                All
-
-            </button>
-
-            <button id="pendingBtn">
-
-                Pending
-
-            </button>
-
-            <button id="completedBtn">
-
-                Completed
-
-            </button>
-
-            <ul id="taskList"></ul>
-
-        </div>
-
-        
-
-        <!-- ===========================
-             Weather Widget
-        ============================ -->
-
-        <div class="weather-card">
-
-            <h2>🌤 Today's Weather</h2>
-
-            <div class="weather-info">
-
-                <h3 id="cityName">
-
-                    City
-
-                </h3>
-
-                <h1 id="temperature">
-
-                    --°C
+                    25:00
 
                 </h1>
 
-                <p id="weatherCondition">
+                <div class="timer-buttons">
 
-                    Loading...
+                    <button id="startTimer">
+
+                        ▶️ Start
+
+                    </button>
+
+                    <button id="pauseTimer">
+
+                        ⏸ Pause
+
+                    </button>
+
+                    <button id="resetTimer">
+
+                        🔄 Reset
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Weather -->
+
+            <div class="weather-card">
+
+                <h2>🌤 Today's Weather</h2>
+
+                <div class="weather-info">
+
+                    <h3 id="cityName">
+
+                        City
+
+                    </h3>
+
+                    <h1 id="temperature">
+
+                        --°C
+
+                    </h1>
+
+                    <p id="weatherCondition">
+
+                        Loading...
+
+                    </p>
+
+                    <div class="weather-details">
+
+                        <p>
+
+                            💧 Humidity :
+                            <span id="humidity">
+
+                                --
+
+                            </span>%
+
+                        </p>
+
+                        <p>
+
+                            🌬 Wind :
+                            <span id="windSpeed">
+
+                                --
+
+                            </span>
+                            km/h
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Streak -->
+
+            <div class="streak-card">
+
+                <h2>🔥 Daily Streak</h2>
+
+                <div class="streak-grid">
+
+                    <div class="streak-box">
+
+                        <h3 id="currentStreak">1</h3>
+
+                        <p>Current</p>
+
+                    </div>
+
+                    <div class="streak-box">
+
+                        <h3 id="bestStreak">1</h3>
+
+                        <p>Best</p>
+
+                    </div>
+
+                </div>
+
+                <p class="last-opened">
+
+                    📅 Last Opened :
+                    <span id="lastOpened"></span>
 
                 </p>
 
-                <div class="weather-details">
+            </div>
 
-                    <p>
+        </div>
 
-                        💧 Humidity:
-                        <span id="humidity">
+        <!-- =======================
+             MIDDLE COLUMN
+        ======================== -->
 
-                            --
+        <div class="middle-column">            <!-- ===========================
+                 Task Manager
+            ============================ -->
 
-                        </span>%
+            <div class="task-card">
 
-                    </p>
+                <h2>✅ Task Manager</h2>
 
-                    <p>
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter a task">
 
-                        🌬 Wind:
-                        <span id="windSpeed">
+                <select id="priority">
 
-                            --
+                    <option>High</option>
 
-                        </span>
-                        km/h
+                    <option>Medium</option>
 
-                    </p>
+                    <option>Low</option>
+
+                </select>
+
+                <input
+                    type="date"
+                    id="dueDate">
+
+                <button id="addTaskBtn">
+
+                    Add Task
+
+                </button>
+
+                <br><br>
+
+                <input
+                    type="text"
+                    id="searchTask"
+                    placeholder="Search task...">
+
+                <select id="sortTasks">
+
+                    <option value="default">
+                        Sort Tasks
+                    </option>
+
+                    <option value="priority">
+                        Priority
+                    </option>
+
+                    <option value="date">
+                        Due Date
+                    </option>
+
+                    <option value="az">
+                        A → Z
+                    </option>
+
+                </select>
+
+                <br><br>
+
+                <button id="allTasksBtn">
+
+                    All
+
+                </button>
+
+                <button id="pendingBtn">
+
+                    Pending
+
+                </button>
+
+                <button id="completedBtn">
+
+                    Completed
+
+                </button>
+
+                <ul id="taskList"></ul>
+
+            </div>
+
+            <!-- ===========================
+                 Planner
+            ============================ -->
+
+            <div class="planner-card">
+
+                <h2>📅 Daily Planner</h2>
+
+                <input
+                    type="time"
+                    id="plannerTime">
+
+                <input
+                    type="text"
+                    id="plannerTask"
+                    placeholder="Enter your plan">
+
+                <button id="addPlannerBtn">
+
+                    Add Plan
+
+                </button>
+
+                <ul id="plannerList"></ul>
+
+            </div>
+
+            <!-- ===========================
+                 Badges
+            ============================ -->
+
+            <div class="badges-card">
+
+                <h2>🏆 Achievements</h2>
+
+                <div
+                    id="badgesContainer"
+                    class="badges-grid">
 
                 </div>
 
             </div>
 
         </div>
-        <!-- ===========================
-     Daily Planner
-=========================== -->
 
-<div class="planner-card">
+        <!-- =======================
+             RIGHT COLUMN
+        ======================== -->
 
-    <h2>📅 Daily Planner</h2>
+        <div class="right-column">            <!-- ===========================
+                 Productivity Dashboard
+            ============================ -->
 
-    <input
-        type="time"
-        id="plannerTime">
+            <div class="insights-card">
 
-    <input
-        type="text"
-        id="plannerTask"
-        placeholder="Enter your plan">
+                <h2>🚀 Productivity Dashboard</h2>
 
-    <button id="addPlannerBtn">
+                <div class="insight-grid">
 
-        Add Plan
+                    <div class="insight-box">
 
-    </button>
+                        <h3 id="insightNotes">0</h3>
 
-    <ul id="plannerList"></ul>
+                        <p>Notes</p>
 
-</div>
-<!-- ===========================
-     Productivity Dashboard
-=========================== -->
+                    </div>
 
-<div class="insights-card">
+                    <div class="insight-box">
 
-    <h2>🚀 Productivity Dashboard</h2>
+                        <h3 id="insightFocus">0</h3>
 
-    <div class="insight-grid">
+                        <p>Focus Updates</p>
 
-        <div class="insight-box">
-            <h3 id="insightNotes">0</h3>
-            <p>Notes</p>
+                    </div>
+
+                    <div class="insight-box">
+
+                        <h3 id="insightPomodoro">0</h3>
+
+                        <p>Pomodoros</p>
+
+                    </div>
+
+                    <div class="insight-box">
+
+                        <h3 id="insightPlans">0</h3>
+
+                        <p>Plans</p>
+
+                    </div>
+
+                    <div class="insight-box">
+
+                        <h3 id="goalPercent">0%</h3>
+
+                        <p>Goal Completion</p>
+
+                    </div>
+
+                    <div class="insight-box">
+
+                        <h3 id="userLevel">
+
+                            🌱 Beginner
+
+                        </h3>
+
+                        <p>Productivity Level</p>
+
+                    </div>
+
+                </div>
+
+                <br>
+
+                <h3>
+
+                    Overall Productivity
+
+                    <span id="insightPercent">
+
+                        0%
+
+                    </span>
+
+                </h3>
+
+                <div class="progress-bar">
+
+                    <div id="insightProgress"></div>
+
+                </div>
+
+                <br>
+
+                <h3 id="productivityStatus">
+
+                    💪 Let's get productive!
+
+                </h3>
+
+                <p id="motivationLine">
+
+                    🚀 Keep Building!
+
+                </p>
+
+            </div>
+
+            <!-- ===========================
+                 Weekly Chart
+            ============================ -->
+
+            <div class="chart-card">
+
+                <h2>📊 Weekly Productivity</h2>
+
+                <canvas id="weeklyChart"></canvas>
+
+            </div>
+
+            <!-- ===========================
+                 Export PDF
+            ============================ -->
+
+            <button id="downloadPDF">
+
+                📄 Export Dashboard as PDF
+
+            </button>
+
         </div>
 
-        <div class="insight-box">
-            <h3 id="insightFocus">0</h3>
-            <p>Focus Updates</p>
-        </div>
+    </div>    </div>
 
-        <div class="insight-box">
-            <h3 id="insightPomodoro">0</h3>
-            <p>Pomodoros</p>
-        </div>
+    <!-- ===========================
+         Libraries
+    ============================ -->
 
-        <div class="insight-box">
-            <h3 id="insightPlans">0</h3>
-            <p>Plans</p>
-        </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-    <br>
-
-    <h3>
-        Overall Productivity
-        <span id="insightPercent">0%</span>
-    </h3>
-
-    <div class="progress-bar">
-        <div id="insightProgress"></div>
-    </div>
-
-    <br>
-
-    <h3 id="productivityStatus">
-        💪 Let's get productive!
-    </h3>
-
-    <p id="motivationLine">
-        🚀 Keep Building!
-    </p>
-
-</div>
-    
-
-    </div>
+    <!-- ===========================
+         JavaScript Files
+    ============================ -->
 
     <script src="assets/js/storage.js"></script>
 
-<script src="assets/js/app.js"></script>
+    <script src="assets/js/app.js"></script>
 
-<script src="assets/js/focus.js"></script>
-<script src="assets/js/notes.js"></script>
-<script src="assets/js/tasks.js"></script>
-<script src="assets/js/planner.js"></script>
-<script src="assets/js/insights.js"></script>
-<script src="assets/js/weather.js"></script>
+    <script src="assets/js/focus.js"></script>
 
+    <script src="assets/js/notes.js"></script>
 
+    <script src="assets/js/tasks.js"></script>
+
+    <script src="assets/js/planner.js"></script>
+
+    <script src="assets/js/insights.js"></script>
+
+    <script src="assets/js/streak.js"></script>
+
+    <script src="assets/js/badges.js"></script>
+
+    <script src="assets/js/chart.js"></script>
+
+    <script src="assets/js/pdf.js"></script>
+
+    <script src="assets/js/quotes.js"></script>
+
+    <script src="assets/js/weather.js"></script>
 
 </body>
 

@@ -173,3 +173,98 @@ function loadPlanner() {
     }
 
 }
+// ===============================
+// Streak Storage
+// ===============================
+
+function saveStreak(streakData) {
+
+    localStorage.setItem(
+        "devdeskStreak",
+        JSON.stringify(streakData)
+    );
+
+}
+
+function loadStreak() {
+
+    let data = localStorage.getItem("devdeskStreak");
+
+    if (data) {
+
+        return JSON.parse(data);
+
+    }
+
+    return {
+
+        current: 1,
+
+        best: 1,
+
+        lastOpened: new Date().toDateString()
+
+    };
+
+}
+// ===============================
+// Streak Storage
+// ===============================
+
+function saveStreak(streak){
+
+    localStorage.setItem(
+        "devdeskStreak",
+        JSON.stringify(streak)
+    );
+
+}
+
+function loadStreak(){
+
+    let data = localStorage.getItem("devdeskStreak");
+
+    if(data){
+
+        return JSON.parse(data);
+
+    }
+
+    return{
+
+        current:1,
+
+        best:1,
+
+        last:new Date().toDateString()
+
+    };
+
+}
+// ===============================
+// Weekly Chart Storage
+// ===============================
+
+function saveWeeklyData(data){
+
+    localStorage.setItem(
+        "weeklyProductivity",
+        JSON.stringify(data)
+    );
+
+}
+
+function loadWeeklyData(){
+
+    let data=
+    localStorage.getItem("weeklyProductivity");
+
+    if(data){
+
+        return JSON.parse(data);
+
+    }
+
+    return [0,0,0,0,0,0,0];
+
+}

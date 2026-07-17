@@ -46,6 +46,16 @@ function addPlan() {
     if (typeof updateInsights === "function") {
         updateInsights();
     }
+    if(typeof renderBadges==="function"){
+
+renderBadges();
+
+}
+if(typeof updateChart==="function"){
+
+    updateChart();
+
+}
 
     plannerTime.value = "";
     plannerTask.value = "";
@@ -68,6 +78,16 @@ function displayPlanner() {
         if (typeof updateInsights === "function") {
             updateInsights();
         }
+        if(typeof renderBadges==="function"){
+
+renderBadges();
+
+}
+if(typeof updateChart==="function"){
+
+    updateChart();
+
+}
 
         return;
     }
@@ -108,6 +128,16 @@ function displayPlanner() {
             if (typeof updateInsights === "function") {
                 updateInsights();
             }
+            if(typeof renderBadges==="function"){
+
+renderBadges();
+
+}
+if(typeof updateChart==="function"){
+
+    updateChart();
+
+}
 
         });
 
@@ -130,6 +160,16 @@ function displayPlanner() {
                 if (typeof updateInsights === "function") {
                     updateInsights();
                 }
+                if(typeof renderBadges==="function"){
+
+renderBadges();
+
+}
+if(typeof updateChart==="function"){
+
+    updateChart();
+
+}
             }
 
         });
@@ -146,6 +186,16 @@ function displayPlanner() {
     if (typeof updateInsights === "function") {
         updateInsights();
     }
+    if(typeof renderBadges==="function"){
+
+renderBadges();
+
+}
+if(typeof updateChart==="function"){
+
+    updateChart();
+
+}
 }
 
 // -------------------------------
