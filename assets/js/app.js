@@ -42,19 +42,7 @@ loadNotes();
 // Ask Username (Only First Time)
 // -------------------------------
 
-if (userName === "") {
 
-    userName = prompt("Welcome to DevDesk!\n\nEnter your name:");
-
-    if (userName === null || userName.trim() === "") {
-
-        userName = "Developer";
-
-    }
-
-    saveUser();
-
-}
 
 
 // -------------------------------
@@ -90,6 +78,18 @@ let pauseTimerBtn = document.getElementById("pauseTimer");
 let resetTimerBtn = document.getElementById("resetTimer");
 
 let motivation = document.getElementById("motivation");
+let loginScreen = document.getElementById("loginScreen");
+
+let dashboard = document.getElementById("dashboard");
+
+let loginName = document.getElementById("loginName");
+
+let continueBtn = document.getElementById("continueBtn");
+
+let guestBtn = document.getElementById("guestBtn");
+
+let rememberUser = document.getElementById("rememberUser");
+let logoutBtn=document.getElementById("logoutBtn");
 // ===============================
 // Dashboard Elements
 // ===============================
@@ -414,6 +414,60 @@ function resetPomodoro() {
     resetTimerBtn.disabled = true;
 
 }
+// ===============================
+// LOGIN
+// ===============================
+
+function showDashboard(){
+
+    loginScreen.style.display="none";
+
+    dashboard.style.display="block";
+
+    greetUser();
+
+}
+
+function showLogin(){
+
+    loginScreen.style.display="flex";
+
+    dashboard.style.display="none";
+
+}
+function loginUser(){
+
+    let name = loginName.value.trim();
+
+    if(name===""){
+        alert("Please enter your name.");
+        return;
+    }
+
+    userName = name;
+
+    if(rememberUser.checked){
+
+        saveUser();
+
+    }else{
+
+        localStorage.removeItem("userName");
+
+    }
+
+    showDashboard();
+
+}
+function guestLogin(){
+
+    localStorage.removeItem("userName");
+
+    userName="Guest";
+
+    showDashboard();
+
+}
 function toggleTheme() {
 
     document.body.classList.toggle("dark-mode");
@@ -435,11 +489,42 @@ function toggleTheme() {
     }
 
 }
+// ===============================
+// Logout
+// ===============================
+
+function logout(){
+
+    let confirmLogout=confirm(
+        "Logout from DevDesk?"
+    );
+
+    if(!confirmLogout){
+
+        return;
+
+    }
+
+    localStorage.removeItem("userName");
+
+    location.reload();
+
+}
 
 
 // -------------------------------
 // Initialization
 // -------------------------------
+if(userName===""){
+
+    showLogin();
+
+}
+else{
+
+    showDashboard();
+
+}
 
 greetUser();
 
@@ -489,6 +574,20 @@ startTimerBtn.addEventListener("click", startPomodoro);
 pauseTimerBtn.addEventListener("click", pausePomodoro);
 
 resetTimerBtn.addEventListener("click", resetPomodoro);
+continueBtn.addEventListener("click",loginUser);
+
+guestBtn.addEventListener("click",guestLogin);
+
+loginName.addEventListener("keydown",function(e){
+
+    if(e.key==="Enter"){
+
+        loginUser();
+
+    }
+
+});
+logoutBtn.addEventListener("click",logout);
 // ===============================
 // Toast Notification
 // ===============================

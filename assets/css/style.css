@@ -2525,3 +2525,143 @@ button:disabled {
     background-size:300% 300%;
 
 }
+/* =====================================
+   LOGIN SCREEN
+===================================== */
+
+.login-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6,
+        #60a5fa
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+.login-card{
+
+    width:380px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+    animation:loginPop .6s ease;
+
+}
+.login-card h1{
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+}
+
+.login-card p{
+
+    color:#6b7280;
+
+    margin-bottom:25px;
+
+}
+.login-card input[type=text]{
+
+    width:100%;
+
+    margin-bottom:18px;
+
+    box-sizing:border-box;
+
+}
+.remember-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+    font-size:15px;
+
+    color:#4b5563;
+
+}
+#continueBtn,
+#guestBtn{
+
+    width:100%;
+
+    margin-top:10px;
+
+}
+.divider{
+
+    margin:20px 0;
+
+    color:#9ca3af;
+
+    font-weight:600;
+
+}
+@keyframes loginPop{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.85);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+.dark-mode .login-card{
+
+    background:#1f2937;
+
+}
+
+.dark-mode .login-card p{
+
+    color:#d1d5db;
+
+}
+#logoutBtn{
+
+    background:#ef4444;
+
+}
+
+#logoutBtn:hover{
+
+    background:#dc2626;
+
+}
