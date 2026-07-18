@@ -132,6 +132,10 @@ function loadTasks() {
 // Planner Storage
 // ===============================
 
+// ===============================
+// Planner Storage
+// ===============================
+
 function savePlanner() {
 
     localStorage.setItem(
@@ -149,7 +153,9 @@ function loadPlanner() {
 
         planner = JSON.parse(data);
 
-    } else {
+    }
+
+    else {
 
         planner = [];
 

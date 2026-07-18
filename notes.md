@@ -1694,3 +1694,101 @@ DevDesk now provides a much more polished user experience with modern dashboard 
 - DOM manipulation
 - CSS animations
 - Session management
+# Day 12 - Notifications & Productivity Improvements
+
+## Features Implemented
+
+### 1. Login System
+- Added Login Screen
+- Continue as Guest option
+- Remember Me functionality
+- User data stored using localStorage
+
+---
+
+### 2. Browser Notifications
+Implemented Browser Notification API.
+
+Notifications added for:
+- Welcome Back
+- Guest Login
+- Pomodoro Completion
+- Planner Reminder
+
+---
+
+### 3. Planner Reminder System
+Created reminder.js.
+
+Features:
+- Checks planner every 30 seconds.
+- Shows browser notification when task time matches current time.
+- Displays in-app toast notification.
+- Prevents duplicate reminders using `notified` flag.
+
+---
+
+### 4. Daily Reminder Reset
+Implemented automatic planner reminder reset.
+
+Features:
+- Resets reminder status once per day.
+- Allows recurring planner reminders every day.
+- Similar behaviour to Google Calendar and Microsoft To Do.
+
+---
+
+### 5. Dashboard Improvements
+- Live Dashboard Updates
+- XP Updates
+- Productivity Updates
+- Badge Refresh
+- Weekly Chart Refresh
+
+---
+
+### 6. Better UX
+- Replaced alert() with toast notifications.
+- Premium notification experience.
+- Improved login flow.
+
+---
+
+## Files Added
+
+assets/js/reminder.js
+
+---
+
+## Files Modified
+
+index.html
+
+assets/js/app.js
+
+assets/js/planner.js
+
+assets/js/storage.js
+
+assets/js/notifications.js
+
+assets/js/insights.js
+
+---
+
+## Concepts Learned
+
+- Browser Notification API
+- Notification Permission Handling
+- setInterval()
+- Date & Time Comparison
+- LocalStorage
+- Daily State Reset
+- Real-time Dashboard Updates
+- Modular JavaScript Architecture
+
+---
+
+## Git Commit
+
+Day 12: Login, Notifications, Planner Reminders & Dashboard Enhancements

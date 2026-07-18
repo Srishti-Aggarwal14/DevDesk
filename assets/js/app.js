@@ -24,7 +24,7 @@ let currentGreetingPeriod = "";
 
 let timer;
 
-let totalSeconds = 25 *60;
+let totalSeconds = 25 * 60;
 
 let isRunning = false;
 
@@ -359,13 +359,18 @@ if(typeof updateChart==="function"){
 
             setTimeout(function () {
 
-                showToast("🍅 Pomodoro Completed!");
+    showNotification(
+        "🍅 Pomodoro Completed",
+        "Great Job! Time for a short break."
+    );
 
-                totalSeconds = 25 * 60; 
+    showToast("🍅 Pomodoro Completed!");
 
-                updateTimerDisplay();
+    totalSeconds =25 * 60;
 
-            }, 2000);
+    updateTimerDisplay();
+
+}, 2000);
 
         }
 
@@ -457,6 +462,12 @@ function loginUser(){
     }
 
     showDashboard();
+    showNotification(
+    "👋 Welcome",
+    "Welcome back, " + userName + "!"
+);
+
+showToast("Welcome back " + userName + " 👋");
 
 }
 function guestLogin(){
@@ -466,6 +477,12 @@ function guestLogin(){
     userName="Guest";
 
     showDashboard();
+    showNotification(
+        "🚀 Guest Mode",
+        "Welcome to DevDesk!"
+    );
+
+showToast("Welcome Guest 🚀");
 
 }
 function toggleTheme() {

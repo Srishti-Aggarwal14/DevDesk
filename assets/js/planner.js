@@ -30,10 +30,13 @@ function addPlan() {
     }
 
     planner.push({
-        time: time,
-        task: task,
-        completed: false
-    });
+
+    time: time,
+    task: task,
+    completed: false,
+    notified: false
+
+});
 
     planner.sort(function (a, b) {
         return a.time.localeCompare(b.time);
@@ -129,6 +132,7 @@ if(typeof updateChart==="function"){
     }
 
     planner[i].completed = !planner[i].completed;
+    planner[i].notified = true;
 
     savePlanner();
     showToast("✅ Plan Completed");
