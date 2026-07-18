@@ -1429,3 +1429,119 @@ It provides visual feedback about urgency, making the timer easier to interpret 
 - Personalized motivational messages.
 - Messages update automatically based on daily activity.
 - Connected with dashboard statistics.
+
+# Milestone 8 – Productivity Dashboard
+
+## Features Added
+
+- Built a complete Productivity Dashboard.
+- Added live dashboard statistics.
+- Displayed Notes count.
+- Displayed Focus updates count.
+- Displayed Pomodoro sessions completed.
+- Displayed Planner entries count.
+- Added Goal Completion Percentage.
+- Added Overall Productivity Percentage.
+- Added Productivity Status indicator.
+- Added Dynamic Motivation Line.
+- Dashboard updates automatically whenever user activity changes.
+
+## Files Updated
+
+- insights.js
+- app.js
+- notes.js
+- focus.js
+- planner.js
+- tasks.js
+- index.html
+- style.css
+
+## Outcome
+
+Users can now monitor their daily productivity from a single dashboard.
+
+# Milestone 9 – XP & Gamification System
+
+## Features Added
+
+- Introduced XP (Experience Points) System.
+- Added Level Progression.
+- Different activities reward different XP.
+- Focus Update gives XP.
+- Notes give XP.
+- Pomodoro Completion gives XP.
+- Automatic Level Up after reaching 100 XP.
+- XP resets after every Level Up.
+- Dashboard now displays:
+  - Current XP
+  - Current Level
+  - Level Title
+
+## XP Rewards
+
+- Focus Update → +15 XP
+- Add Note → +10 XP
+- Complete Pomodoro → +30 XP
+
+## Files Updated
+
+- storage.js
+- insights.js
+- app.js
+- focus.js
+- notes.js
+
+## Outcome
+
+DevDesk now motivates users using a gamified productivity system.
+
+# Milestone 10 – Dashboard Enhancements
+
+## Features Added
+
+### Weekly Productivity Chart
+
+- Added Weekly Productivity Analytics.
+- Implemented Chart.js.
+- Dashboard displays weekly activity graph.
+- Graph updates automatically.
+
+### Export Dashboard as PDF
+
+- Added Export Dashboard feature.
+- Dashboard can now be downloaded as PDF.
+- Used html2pdf.js library.
+
+### Toast Notifications
+
+Replaced traditional alert boxes with modern toast notifications.
+
+Implemented notifications for:
+
+- Note Added
+- Focus Updated
+- Task Added
+- Task Completed
+- Task Deleted
+- Plan Added
+- Plan Completed
+- Plan Deleted
+- Pomodoro Completed
+- Validation Messages
+
+## Files Updated
+
+- chart.js
+- pdf.js
+- app.js
+- notes.js
+- planner.js
+- tasks.js
+- focus.js
+- index.html
+- style.css
+
+## Outcome
+
+Improved overall user experience with modern dashboard interactions and visual feedback.
