@@ -1637,3 +1637,60 @@ DevDesk now provides a much more polished user experience with modern dashboard 
 ## ✅ Milestone Status
 
 **Completed ✅**
+
+# Day 12 – Login System & UI Enhancements
+
+## Features Added
+
+### 🔐 Login System
+
+- Added welcome login screen.
+- User enters name before accessing dashboard.
+- Guest mode support.
+- Remember Me functionality using Local Storage.
+- Automatic dashboard loading for remembered users.
+
+---
+
+### 🚪 Logout
+
+- Added Logout button.
+- Clears saved user.
+- Returns to Login Screen.
+
+---
+
+### 🎨 UI Improvements
+
+- Modern login card.
+- Premium blue gradient background.
+- Smooth popup animation.
+- Better spacing and typography.
+
+---
+
+### 📊 Productivity Dashboard
+
+- Animated counters.
+- Smooth progress bar animations.
+- XP and Level system improvements.
+- Better dashboard updates.
+
+---
+
+### 🛠 Improvements
+
+- Cleaner initialization.
+- Improved Local Storage handling.
+- Better user flow.
+
+---
+
+## Concepts Learned
+
+- Authentication flow (Frontend)
+- Local Storage
+- Conditional rendering
+- DOM manipulation
+- CSS animations
+- Session management
