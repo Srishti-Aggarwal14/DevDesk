@@ -90,6 +90,7 @@ let guestBtn = document.getElementById("guestBtn");
 
 let rememberUser = document.getElementById("rememberUser");
 let logoutBtn=document.getElementById("logoutBtn");
+let menuBtn = document.getElementById("menuBtn");
 // ===============================
 // Dashboard Elements
 // ===============================
@@ -428,6 +429,13 @@ function showDashboard(){
     loginScreen.style.display="none";
 
     dashboard.style.display="block";
+    dashboard.style.opacity="0";
+
+setTimeout(function(){
+
+    dashboard.style.opacity="1";
+
+},100);
 
     greetUser();
 
@@ -486,6 +494,7 @@ showToast("Welcome Guest 🚀");
 
 }
 function toggleTheme() {
+    
 
     document.body.classList.toggle("dark-mode");
 
@@ -504,6 +513,13 @@ function toggleTheme() {
         themeBtn.textContent = "🌙";
 
     }
+
+}
+function toggleMenu(){
+
+    let nav = document.querySelector(".nav-right");
+
+    nav.classList.toggle("show");
 
 }
 // ===============================
@@ -585,6 +601,7 @@ setInterval(updateDateTime, 1000);
 
 
 themeBtn.addEventListener("click", toggleTheme);
+menuBtn.addEventListener("click",toggleMenu);
 
 startTimerBtn.addEventListener("click", startPomodoro);
 
@@ -605,6 +622,7 @@ loginName.addEventListener("keydown",function(e){
 
 });
 logoutBtn.addEventListener("click",logout);
+
 // ===============================
 // Toast Notification
 // ===============================
@@ -624,3 +642,25 @@ function showToast(message){
     },2500);
 
 }
+function animateButton(button){
+
+    button.classList.add("button-click");
+
+    setTimeout(function(){
+
+        button.classList.remove("button-click");
+
+    },250);
+
+}
+let buttons=document.querySelectorAll("button");
+
+buttons.forEach(function(btn){
+
+    btn.addEventListener("click",function(){
+
+        animateButton(btn);
+
+    });
+
+});

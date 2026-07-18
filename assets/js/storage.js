@@ -241,10 +241,13 @@ function addXP(points) {
 
         stats.level++;
 
-        alert(
-            "🎉 Level Up!\n\nYou reached Level " +
-            stats.level
-        );
+        showToast("🎉 Level Up! Welcome to Level " + stats.level);
+
+if(typeof confetti==="function"){
+
+    confetti();
+
+}
 
     }
 

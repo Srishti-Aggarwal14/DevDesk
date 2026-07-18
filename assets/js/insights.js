@@ -146,7 +146,13 @@ setTimeout(function(){
 
 },700);
 
+    insightProgress.style.width = "0%";
+
+setTimeout(function(){
+
     insightProgress.style.width = percentage + "%";
+
+},100);
 
     // --------------------------
     // Goal Completion

@@ -1,3 +1,12 @@
+*{
+
+    transition:
+        background .3s,
+        color .3s,
+        border-color .3s,
+        box-shadow .3s;
+
+}
 /* =====================================
    RESET
 ===================================== */
@@ -100,8 +109,14 @@ body{
 
     box-shadow:0 10px 25px rgba(0,0,0,.08);
 
-}
+    transition:.3s;
 
+}
+.navbar:hover{
+
+    box-shadow:0 15px 35px rgba(37,99,235,.12);
+
+}
 .navbar h2{
 
     font-size:32px;
@@ -176,6 +191,9 @@ h1{
     gap:16px;
 
     margin-bottom:35px;
+    transition: all .35s ease;
+
+transform: translateY(0);
 
 }
 /* =====================================
@@ -194,7 +212,10 @@ h1{
 .chart-card,
 .analytics-card{
 
-    transition:0.35s ease;
+    
+    transition: all .35s ease;
+
+transform: translateY(0);
 
 }
 
@@ -227,11 +248,19 @@ h1{
 .chart-card,
 .analytics-card{
 
-    background:#fff;
+    background:rgba(255,255,255,.72);
+
+backdrop-filter:blur(16px);
+
+border:1px solid rgba(255,255,255,.25);
 
     border-radius:18px;
 
     box-shadow:0 4px 15px rgba(0,0,0,.06);
+
+    transition: all .35s ease;
+
+transform: translateY(0);
 
 }
 
@@ -260,6 +289,10 @@ h1{
 
 input{
 
+    width:100%;
+
+    box-sizing:border-box;
+
     padding:14px;
 
     border:1px solid #d1d5db;
@@ -273,6 +306,19 @@ input{
     transition:.3s;
 
     background:white;
+
+}
+select{
+
+    width:100%;
+
+    box-sizing:border-box;
+
+}
+input:hover,
+select:hover{
+
+    border-color:#2563eb;
 
 }
 
@@ -311,6 +357,8 @@ button{
 
     overflow:hidden;
 
+    max-width:100%;
+
 }
 
 button:hover{
@@ -318,6 +366,7 @@ button:hover{
     transform:translateY(-2px);
 
     box-shadow:0 10px 18px rgba(37,99,235,.25);
+    filter:brightness(1.05);
 
 }
 
@@ -436,6 +485,8 @@ button:active{
     text-align:center;
 
     margin-bottom:30px;
+
+    animation:fadeUp .9s ease;
 
 }
 
@@ -635,7 +686,7 @@ button:active{
 
     justify-content: center;
 
-    gap: 15px;
+    gap: 10px;
 
     flex-wrap: wrap;
 
@@ -1466,7 +1517,9 @@ gap:18px;
 
     display:flex;
 
-    gap:10px;
+    flex-wrap:wrap;
+
+    gap:8px;
 
 }
 
@@ -1517,7 +1570,7 @@ gap:18px;
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
 
     gap:15px;
 
@@ -1587,6 +1640,7 @@ gap:18px;
     box-shadow:
 
     0 0 15px rgba(37,99,235,.5);
+    transition:width .8s ease;
 
 
 }
@@ -1867,6 +1921,8 @@ gap:18px;
 
     align-items:start;
 
+    animation:fadeUp .8s ease;
+
 }
 
 .left-column,
@@ -1925,6 +1981,9 @@ gap:18px;
 .insights-card{
 
     margin:0;
+    transition: all .35s ease;
+
+transform: translateY(0);
 
 }
 /* =====================================
@@ -1999,7 +2058,10 @@ gap:18px;
 .chart-card,
 .insights-card{
 
-    transition:all .3s ease;
+    
+    transition: all .35s ease;
+
+transform: translateY(0);
 
 }
 .focus-card:hover,
@@ -2033,9 +2095,14 @@ gap:18px;
 .chart-card,
 .insights-card{
 
-    transition:all .35s ease;
+
 
     border:1px solid transparent;
+    transition: all .35s ease;
+
+transform: translateY(0);transition: all .35s ease;
+
+
 
 }
 
@@ -2185,6 +2252,9 @@ gap:18px;
     transition:
         transform .35s ease,
         box-shadow .35s ease;
+        transition: all .35s ease;
+
+transform: translateY(0);
 
 }
 
@@ -2249,6 +2319,9 @@ gap:18px;
 .insights-card{
 
     animation: floatCard 5s ease-in-out infinite;
+    transition: all .35s ease;
+
+transform: translateY(0);
 
 }
 
@@ -2385,6 +2458,9 @@ gap:18px;
     border:1px solid rgba(255,255,255,.45);
 
     transition:.35s;
+    transition: all .35s ease;
+
+transform: translateY(0);
 
 }
 .focus-card:hover,
@@ -2854,5 +2930,287 @@ gap:18px;
 .dark-mode .analytics-card h2{
 
     color:#60a5fa;
+
+}
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+/* Tablet */
+
+@media (max-width:1024px){
+
+.dashboard{
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.right-column{
+
+    grid-column:1 / span 2;
+
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.container{
+
+    padding:15px;
+
+}
+
+.dashboard{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.left-column,
+.middle-column,
+.right-column{
+
+    width:100%;
+
+}
+
+.navbar{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+.nav-right{
+
+    width:100%;
+
+    justify-content:space-between;
+
+}
+
+.greeting-section h1{
+
+    font-size:28px;
+
+}
+
+.focus-card,
+.notes-card,
+.task-card,
+.timer-card,
+.weather-card,
+.planner-card,
+.streak-card,
+.insights-card,
+.badges-card,
+.chart-card{
+
+    width:100%;
+
+    margin-bottom:20px;
+    transition: all .35s ease;
+
+transform: translateY(0);
+
+}
+
+}
+/* =====================================
+   HAMBURGER MENU
+===================================== */
+
+.menu-btn{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
+
+@media (max-width:768px){
+
+    .navbar{
+
+        display:flex;
+
+        justify-content:space-between;
+
+        align-items:center;
+
+        flex-direction:row;
+
+        padding:15px;
+
+    }
+
+    .menu-btn{
+
+        display:block !important;
+
+        font-size:32px;
+
+        color:#2563eb;
+
+        background:none;
+
+        border:none;
+
+        cursor:pointer;
+
+        margin-right:10px;
+
+    }
+
+    .nav-right{
+
+        display:none;
+
+        width:100%;
+
+    }
+
+    .nav-right.show{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:10px;
+
+        margin-top:15px;
+
+    }
+
+}
+/* =====================================
+   CARD HOVER EFFECT
+===================================== */
+
+.focus-card:hover,
+.notes-card:hover,
+.timer-card:hover,
+.task-card:hover,
+.planner-card:hover,
+.weather-card:hover,
+.streak-card:hover,
+.insights-card:hover,
+.badges-card:hover,
+.chart-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(37,99,235,.18);
+
+}
+/* =====================================
+   CUSTOM SCROLLBAR
+===================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef4ff;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#1d4ed8;
+
+}
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+@keyframes clickPop{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(.95);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+.button-click{
+
+    animation:clickPop .25s ease;
+
+}
+.left-column>*{
+
+    animation:fadeUp .6s ease;
+
+}
+
+.middle-column>*{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.right-column>*{
+
+    animation:fadeUp 1s ease;
 
 }
