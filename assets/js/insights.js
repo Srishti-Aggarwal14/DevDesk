@@ -298,3 +298,8 @@ setTimeout(function(){
 // ===============================
 
 updateInsights();
+if (typeof updateAnalytics === "function") {
+
+    updateAnalytics();
+
+}
