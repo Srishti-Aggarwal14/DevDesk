@@ -14,17 +14,43 @@
 
 body{
 
-    font-family:Arial, Helvetica, sans-serif;
+    margin:0;
 
-    background:#eef2ff;
+    font-family:"Segoe UI",sans-serif;
 
-    display:flex;
+    background:linear-gradient(
+        135deg,
+        #eef4ff,
+        #f8fbff,
+        #ffffff
+    );
 
-    justify-content:center;
+    background-size:300% 300%;
 
-    align-items:center;
+    animation:gradientMove 12s ease infinite;
 
-    min-height:100vh;
+    overflow-x:hidden;
+
+}
+@keyframes gradientMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
 
 }
 
@@ -62,15 +88,39 @@ body{
 
     margin-bottom:30px;
 
-    border-bottom:2px solid #e5e7eb;
+    padding:18px 25px;
 
-    padding-bottom:18px;
+    border-radius:18px;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 
 }
 
 .navbar h2{
 
-    color:#2563eb;
+    font-size:32px;
+
+    font-weight:700;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    background-clip:text;          /* Standard property */
+
+    -webkit-background-clip:text;  /* Chrome/Safari */
+
+    color:transparent;             /* Standard */
+
+    -webkit-text-fill-color:transparent;
 
 }
 
@@ -154,13 +204,11 @@ h1{
 
 input{
 
-    width:100%;
-
     padding:14px;
 
     border:1px solid #d1d5db;
 
-    border-radius:10px;
+    border-radius:12px;
 
     font-size:16px;
 
@@ -168,7 +216,7 @@ input{
 
     transition:.3s;
 
-    box-sizing:border-box;
+    background:white;
 
 }
 
@@ -176,17 +224,16 @@ input:focus{
 
     border-color:#2563eb;
 
-    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+    transform:scale(1.01);
 
 }
-
 /* =====================================
    BUTTONS
 ===================================== */
 
 button{
-
-    width:100%;
 
     padding:14px;
 
@@ -204,11 +251,23 @@ button{
 
     transition:.3s;
 
+    position:relative;
+
+    overflow:hidden;
+
 }
 
 button:hover{
 
-    background:#1d4ed8;
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 18px rgba(37,99,235,.25);
+
+}
+
+button:active{
+
+    transform:scale(.96);
 
 }
 
@@ -467,7 +526,9 @@ button:hover{
 
 .dark-mode .navbar{
 
-    border-bottom:2px solid #374151;
+    background:rgba(31,41,55,.8);
+
+    border:1px solid rgba(255,255,255,.08);
 
 }
 /* =====================================
@@ -1410,13 +1471,17 @@ button:disabled {
 
 .insight-box{
 
-    min-height:90px;
+    background:white;
 
-    display:flex;
+    border-radius:18px;
 
-    flex-direction:column;
+    padding:20px;
 
-    justify-content:center;
+    text-align:center;
+
+    border:1px solid #edf2f7;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
 
 }
 
@@ -1434,27 +1499,35 @@ button:disabled {
 
     width:100%;
 
-    height:18px;
+    height:14px;
 
     background:#e5e7eb;
 
-    border-radius:20px;
+    border-radius:999px;
 
     overflow:hidden;
-
-    margin-top:15px;
 
 }
 
 #insightProgress{
 
-    width:0%;
-
     height:100%;
 
-    background:#22c55e;
+    width:0;
 
-    transition:0.4s;
+    border-radius:999px;
+
+    transition:width .8s ease;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #22c55e
+    );
+    box-shadow:
+
+    0 0 15px rgba(37,99,235,.5);
+
 
 }
 
@@ -1468,9 +1541,9 @@ button:disabled {
 
 .dark-mode .insight-box{
 
-    background:#4b5563;
+    background:#334155;
 
-    color:white;
+    border:1px solid #475569;
 
 }
 
@@ -1835,5 +1908,620 @@ button:disabled {
     opacity:1;
 
     transform:translateY(0);
+
+}
+/* =====================================
+   PREMIUM UI ANIMATIONS
+===================================== */
+
+*{
+    transition:
+        background-color .35s ease,
+        color .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease,
+        transform .25s ease;
+}
+/* =====================================
+   CARD ANIMATION
+===================================== */
+
+.focus-card,
+.notes-card,
+.timer-card,
+.task-card,
+.weather-card,
+.planner-card,
+.streak-card,
+.badges-card,
+.chart-card,
+.insights-card{
+
+    transition:all .3s ease;
+
+}
+.focus-card:hover,
+.notes-card:hover,
+.timer-card:hover,
+.task-card:hover,
+.weather-card:hover,
+.planner-card:hover,
+.streak-card:hover,
+.badges-card:hover,
+.chart-card:hover,
+.insights-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+/* =====================================
+   PREMIUM CARD EFFECT
+===================================== */
+
+.focus-card,
+.notes-card,
+.timer-card,
+.task-card,
+.weather-card,
+.planner-card,
+.streak-card,
+.badges-card,
+.chart-card,
+.insights-card{
+
+    transition:all .35s ease;
+
+    border:1px solid transparent;
+
+}
+
+.focus-card:hover,
+.notes-card:hover,
+.timer-card:hover,
+.task-card:hover,
+.weather-card:hover,
+.planner-card:hover,
+.streak-card:hover,
+.badges-card:hover,
+.chart-card:hover,
+.insights-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#2563eb;
+
+    box-shadow:
+        0 18px 35px rgba(37,99,235,.15);
+
+}
+.dark-mode .focus-card,
+.dark-mode .notes-card,
+.dark-mode .timer-card,
+.dark-mode .task-card,
+.dark-mode .weather-card,
+.dark-mode .planner-card,
+.dark-mode .streak-card,
+.dark-mode .badges-card,
+.dark-mode .chart-card,
+.dark-mode .insights-card{
+
+    background:#273549;
+
+    border:1px solid #374151;
+
+}
+/* =====================================
+   FLOATING ANIMATION
+===================================== */
+
+@keyframes floating{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+.insight-box{
+
+    animation:floating 4s ease-in-out infinite;
+
+}
+
+.insight-box:nth-child(2){
+
+    animation-delay:.3s;
+
+}
+
+.insight-box:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+.insight-box:nth-child(4){
+
+    animation-delay:.9s;
+
+}
+
+.insight-box:nth-child(5){
+
+    animation-delay:1.2s;
+
+}
+
+.insight-box:nth-child(6){
+
+    animation-delay:1.5s;
+
+}
+.insight-box{
+
+    transition:.35s;
+
+}
+
+.insight-box:hover{
+
+    transform:translateY(-10px) scale(1.05);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.25);
+
+}
+.dashboard{
+
+    animation:fadeIn .8s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* =====================================
+   FLOATING DASHBOARD CARDS
+===================================== */
+
+.focus-card,
+.notes-card,
+.timer-card,
+.task-card,
+.weather-card,
+.planner-card,
+.streak-card,
+.badges-card,
+.chart-card,
+.insights-card{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.focus-card:hover,
+.notes-card:hover,
+.timer-card:hover,
+.task-card:hover,
+.weather-card:hover,
+.planner-card:hover,
+.streak-card:hover,
+.badges-card:hover,
+.chart-card:hover,
+.insights-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 18px 35px rgba(37,99,235,.18);
+
+}
+.dark-mode .navbar{
+
+    background:rgba(31,41,55,.75);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+/* =====================================
+   DASHBOARD COUNTERS
+===================================== */
+
+.insight-box h3{
+
+    font-size:34px;
+
+    color:#2563eb;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.insight-box:hover h3{
+
+    transform:scale(1.12);
+
+}
+/* =====================================
+   Floating Cards Animation
+===================================== */
+
+.focus-card,
+.notes-card,
+.timer-card,
+.weather-card,
+.task-card,
+.planner-card,
+.streak-card,
+.badges-card,
+.chart-card,
+.insights-card{
+
+    animation: floatCard 5s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+.focus-card{
+    animation-delay:0s;
+}
+
+.notes-card{
+    animation-delay:.4s;
+}
+
+.timer-card{
+    animation-delay:.8s;
+}
+
+.weather-card{
+    animation-delay:1.2s;
+}
+
+.task-card{
+    animation-delay:1.6s;
+}
+
+.planner-card{
+    animation-delay:2s;
+}
+
+.streak-card{
+    animation-delay:2.4s;
+}
+
+.badges-card{
+    animation-delay:2.8s;
+}
+
+.chart-card{
+    animation-delay:3.2s;
+}
+
+.insights-card{
+    animation-delay:3.6s;
+}
+.focus-card:hover,
+.notes-card:hover,
+.timer-card:hover,
+.weather-card:hover,
+.task-card:hover,
+.planner-card:hover,
+.streak-card:hover,
+.badges-card:hover,
+.chart-card:hover,
+.insights-card:hover{
+
+    transform:translateY(-10px) scale(1.02);
+
+    box-shadow:0 18px 35px rgba(37,99,235,.18);
+
+    transition:.35s;
+
+}
+.dark-mode
+.focus-card,
+.dark-mode
+.notes-card,
+.dark-mode
+.timer-card,
+.dark-mode
+.weather-card,
+.dark-mode
+.task-card,
+.dark-mode
+.planner-card,
+.dark-mode
+.streak-card,
+.dark-mode
+.badges-card,
+.dark-mode
+.chart-card,
+.dark-mode
+.insights-card{
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+/* =====================================
+   PREMIUM GLASS CARDS
+===================================== */
+
+.focus-card,
+.notes-card,
+.timer-card,
+.weather-card,
+.task-card,
+.planner-card,
+.streak-card,
+.badges-card,
+.insights-card,
+.chart-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.88);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    transition:.35s;
+
+}
+.focus-card:hover,
+.notes-card:hover,
+.timer-card:hover,
+.weather-card:hover,
+.task-card:hover,
+.planner-card:hover,
+.streak-card:hover,
+.badges-card:hover,
+.insights-card:hover,
+.chart-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(37,99,235,.18);
+
+}
+.focus-card::before,
+.notes-card::before,
+.timer-card::before,
+.weather-card::before,
+.task-card::before,
+.planner-card::before,
+.streak-card::before,
+.badges-card::before,
+.insights-card::before,
+.chart-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.55),
+
+        transparent
+
+    );
+
+    transition:.8s;
+
+}
+.focus-card:hover::before,
+.notes-card:hover::before,
+.timer-card:hover::before,
+.weather-card:hover::before,
+.task-card:hover::before,
+.planner-card:hover::before,
+.streak-card:hover::before,
+.badges-card:hover::before,
+.insights-card:hover::before,
+.chart-card:hover::before{
+
+    left:150%;
+
+}
+.dark-mode .focus-card,
+.dark-mode .notes-card,
+.dark-mode .timer-card,
+.dark-mode .weather-card,
+.dark-mode .task-card,
+.dark-mode .planner-card,
+.dark-mode .streak-card,
+.dark-mode .badges-card,
+.dark-mode .insights-card,
+.dark-mode .chart-card{
+
+    background:rgba(31,41,55,.75);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+/* =====================================
+   FLOATING BLOBS
+===================================== */
+
+.blob{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(70px);
+
+    opacity:.18;
+
+    z-index:-1;
+
+}
+.blob1{
+
+    width:300px;
+
+    height:300px;
+
+    background:#3b82f6;
+
+    top:-80px;
+
+    left:-60px;
+
+    animation:blobMove1 15s infinite alternate;
+
+}
+.blob2{
+
+    width:260px;
+
+    height:260px;
+
+    background:#8b5cf6;
+
+    right:-60px;
+
+    top:220px;
+
+    animation:blobMove2 18s infinite alternate;
+
+}
+.blob3{
+
+    width:220px;
+
+    height:220px;
+
+    background:#06b6d4;
+
+    bottom:-70px;
+
+    left:40%;
+
+    animation:blobMove3 16s infinite alternate;
+
+}
+@keyframes blobMove1{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(120px,80px);
+
+    }
+
+}
+
+@keyframes blobMove2{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-120px,100px);
+
+    }
+
+}
+
+@keyframes blobMove3{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-60px,-120px);
+
+    }
+
+}
+.dark-mode{
+
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #111827,
+        #1e293b
+    );
+
+    background-size:300% 300%;
 
 }

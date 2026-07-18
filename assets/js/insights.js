@@ -21,6 +21,35 @@ let userXP = document.getElementById("userXP");
 let levelTitle = document.getElementById("levelTitle");
 
 let levelProgress = document.getElementById("levelProgress");
+// ===============================
+// Animated Counter
+// ===============================
+
+function animateCounter(element, target){
+
+    let start = 0;
+
+    let duration = 700;
+
+    let increment = target / (duration / 16);
+
+    let timer = setInterval(function(){
+
+        start += increment;
+
+        if(start >= target){
+
+            start = target;
+
+            clearInterval(timer);
+
+        }
+
+        element.textContent = Math.floor(start);
+
+    },16);
+
+}
 
 // ===============================
 // Update Dashboard
@@ -33,7 +62,13 @@ function updateInsights() {
 // XP & Level
 // --------------------------
 
-userXP.textContent = stats.xp + " XP";
+animateCounter(userXP, stats.xp);
+
+setTimeout(function(){
+
+    userXP.textContent = stats.xp + " XP";
+
+},700);
 
 levelProgress.textContent =
     "XP : " + stats.xp + " / 100";
@@ -69,22 +104,25 @@ else{
     // Counts
     // --------------------------
 
-    insightNotes.textContent = notes.length;
+    // --------------------------
+// Counts (Animated)
+// --------------------------
 
-    insightFocus.textContent = stats.focus;
+let plannerCount = 0;
 
-    insightPomodoro.textContent = stats.pomodoro;
+if (typeof planner !== "undefined") {
 
-    let plannerCount = 0;
+    plannerCount = planner.length;
 
-    if (typeof planner !== "undefined") {
+}
 
-        plannerCount = planner.length;
+animateCounter(insightNotes, notes.length);
 
-    }
+animateCounter(insightFocus, stats.focus);
 
-    insightPlans.textContent = plannerCount;
+animateCounter(insightPomodoro, stats.pomodoro);
 
+animateCounter(insightPlans, plannerCount);
     // --------------------------
     // Productivity %
     // --------------------------
@@ -100,7 +138,13 @@ else{
         100
     );
 
+    animateCounter(insightPercent, percentage);
+
+setTimeout(function(){
+
     insightPercent.textContent = percentage + "%";
+
+},700);
 
     insightProgress.style.width = percentage + "%";
 
@@ -149,7 +193,13 @@ else{
 
     goal = Math.min(goal, 100);
 
+    animateCounter(goalPercent, goal);
+
+setTimeout(function(){
+
     goalPercent.textContent = goal + "%";
+
+},700);
 
     // --------------------------
     // Productivity Level
