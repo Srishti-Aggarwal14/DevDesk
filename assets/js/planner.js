@@ -25,7 +25,7 @@ function addPlan() {
     let task = plannerTask.value.trim();
 
     if (time === "" || task === "") {
-        alert("Please enter time and task.");
+        showToast("⚠ Fill all planner fields.");
         return;
     }
 
@@ -40,6 +40,7 @@ function addPlan() {
     });
 
     savePlanner();
+    showToast("📅 Plan Added");
     displayPlanner();
 
     // Update Dashboard
@@ -120,26 +121,33 @@ if(typeof updateChart==="function"){
 
         completeBtn.addEventListener("click", function () {
 
-            planner[i].completed = !planner[i].completed;
+    // XP sirf first time complete karne par
+    if (!planner[i].completed) {
 
-            savePlanner();
-            displayPlanner();
+        addXP(15);
 
-            if (typeof updateInsights === "function") {
-                updateInsights();
-            }
-            if(typeof renderBadges==="function"){
+    }
 
-renderBadges();
+    planner[i].completed = !planner[i].completed;
 
-}
-if(typeof updateChart==="function"){
+    savePlanner();
+    showToast("✅ Plan Completed");
 
-    updateChart();
+    displayPlanner();
 
-}
+    if (typeof updateInsights === "function") {
+        updateInsights();
+    }
 
-        });
+    if (typeof renderBadges === "function") {
+        renderBadges();
+    }
+
+    if (typeof updateChart === "function") {
+        updateChart();
+    }
+
+});
 
         // -----------------------
         // Delete Button
@@ -155,6 +163,7 @@ if(typeof updateChart==="function"){
                 planner.splice(i, 1);
 
                 savePlanner();
+                showToast("🗑 Plan Deleted");
                 displayPlanner();
 
                 if (typeof updateInsights === "function") {

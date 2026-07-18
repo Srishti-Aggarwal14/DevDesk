@@ -49,7 +49,7 @@ function addTask() {
 
     if (task === "") {
 
-        alert("Please enter a task.");
+        showToast("⚠ Please enter a task.");
 
         return;
 
@@ -68,6 +68,7 @@ function addTask() {
     });
 
     saveTasks();
+    showToast("✅ Task Added");
 
 displayTasks();
 
@@ -253,19 +254,27 @@ function displayTasks() {
 
         completeBtn.addEventListener("click", function () {
 
-            let index = tasks.indexOf(task);
+    let index = tasks.indexOf(task);
 
-            tasks[index].completed = !tasks[index].completed;
+    // XP sirf jab task pehli baar complete ho
+    if (!tasks[index].completed) {
 
-            saveTasks();
+        addXP(20);
 
-            displayTasks();
+    }
 
-            if (typeof updateInsights === "function") {
-    updateInsights();
-}
+    tasks[index].completed = !tasks[index].completed;
+    showToast("🎉 Task Completed");
 
-        });
+    saveTasks();
+
+    displayTasks();
+
+    if (typeof updateInsights === "function") {
+        updateInsights();
+    }
+
+});
 
         let deleteBtn = document.createElement("button");
 
@@ -280,6 +289,7 @@ function displayTasks() {
                 let index = tasks.indexOf(task);
 
                 tasks.splice(index, 1);
+                showToast("🗑 Task Deleted");
 
                 saveTasks();
 

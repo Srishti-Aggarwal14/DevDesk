@@ -15,7 +15,7 @@ function addNote() {
 
     if (note === "") {
 
-        alert("Please enter a note.");
+        showToast("⚠ Please enter a note.");
         noteInput.focus();
         return;
 
@@ -38,10 +38,14 @@ function addNote() {
     }
 
     notes.push(note);
+    showToast("✅ Note Added");
 
     stats.notes++;
 
     saveNotes();
+    addXP(10);
+
+updateInsights();
 
     updateDashboard();
 

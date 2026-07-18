@@ -1792,3 +1792,48 @@ button:disabled {
     margin:0;
 
 }
+/* =====================================
+   TOAST NOTIFICATION
+===================================== */
+
+#toast{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:16px 22px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:translateY(-20px);
+
+    transition:.35s;
+
+    z-index:9999;
+
+}
+
+#toast.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}

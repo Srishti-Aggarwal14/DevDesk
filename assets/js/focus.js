@@ -26,52 +26,49 @@ function updateFocus() {
 
     if (newFocus === "") {
 
-        alert("Please enter today's focus.");
+        showToast("⚠ Please enter today's focus.");
         focusInput.focus();
         return;
 
     }
 
     // Update state
-
     todaysFocus = "Today's Focus: " + newFocus;
 
-    // Save
-
     saveFocus();
-
-    // Update UI
+    showToast("🎯 Focus Updated");
 
     updateTagline();
 
-    // Dashboard Stats
+    // -----------------------
+    // Stats
+    // -----------------------
 
     stats.focus++;
+
+    saveStats(stats);
+
+    addXP(15);
 
     updateDashboard();
 
     if (typeof updateInsights === "function") {
         updateInsights();
     }
-    if(typeof renderBadges==="function"){
 
-renderBadges();
+    if (typeof renderBadges === "function") {
+        renderBadges();
+    }
 
-}
-if(typeof updateChart==="function"){
-
-    updateChart();
-
-}
+    if (typeof updateChart === "function") {
+        updateChart();
+    }
 
     // Clear input
-
     focusInput.value = "";
-
     focusInput.focus();
 
 }
-
 // -------------------------------
 // Enter Key
 // -------------------------------
@@ -93,8 +90,3 @@ updateTagline();
 
 updateBtn.addEventListener("click", updateFocus);
 
-focusInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        updateFocus();
-    }
-});

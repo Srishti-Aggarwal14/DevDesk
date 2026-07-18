@@ -2,83 +2,58 @@
 // STORAGE FUNCTIONS
 // ===============================
 
-
 // ---------- USER ----------
 
 function saveUser() {
-
     localStorage.setItem("userName", userName);
-
 }
 
 function loadUser() {
-
     let storedUser = localStorage.getItem("userName");
 
     if (storedUser !== null) {
-
         userName = storedUser;
-
     }
-
 }
-
 
 // ---------- FOCUS ----------
 
 function saveFocus() {
-
     localStorage.setItem("todaysFocus", todaysFocus);
-
 }
 
 function loadFocus() {
-
     let storedFocus = localStorage.getItem("todaysFocus");
 
     if (storedFocus !== null) {
-
         todaysFocus = storedFocus;
-
     }
-
 }
-
 
 // ---------- NOTES ----------
 
 function saveNotes() {
-
     localStorage.setItem("notes", JSON.stringify(notes));
-
 }
 
 function loadNotes() {
-
     let storedNotes = localStorage.getItem("notes");
 
     if (storedNotes !== null) {
-
         notes = JSON.parse(storedNotes);
-
     }
-
 }
-
 
 // ---------- THEME ----------
 
 function saveTheme(theme) {
-
     localStorage.setItem("theme", theme);
-
 }
 
 function loadTheme() {
-
     return localStorage.getItem("theme");
-
 }
+
 // ===============================
 // Dashboard Storage
 // ===============================
@@ -94,25 +69,35 @@ function saveStats(stats) {
 
 function loadStats() {
 
-    let stats = localStorage.getItem("devdeskStats");
+    let data = localStorage.getItem("devdeskStats");
 
-    if (stats) {
+    if (data) {
 
-        return JSON.parse(stats);
+        let stats = JSON.parse(data);
+
+        // Backward Compatibility
+        if (stats.notes === undefined) stats.notes = 0;
+        if (stats.focus === undefined) stats.focus = 0;
+        if (stats.pomodoro === undefined) stats.pomodoro = 0;
+        if (stats.xp === undefined) stats.xp = 0;
+        if (stats.level === undefined) stats.level = 1;
+
+        return stats;
 
     }
 
     return {
 
         notes: 0,
-
         focus: 0,
-
-        pomodoro: 0
+        pomodoro: 0,
+        xp: 0,
+        level: 1
 
     };
 
 }
+
 // ===============================
 // Task Storage
 // ===============================
@@ -128,21 +113,21 @@ function saveTasks() {
 
 function loadTasks() {
 
-    let storedTasks = localStorage.getItem("devdeskTasks");
+    let storedTasks =
+        localStorage.getItem("devdeskTasks");
 
     if (storedTasks) {
 
         tasks = JSON.parse(storedTasks);
 
-    }
-
-    else {
+    } else {
 
         tasks = [];
 
     }
 
 }
+
 // ===============================
 // Planner Storage
 // ===============================
@@ -164,31 +149,31 @@ function loadPlanner() {
 
         planner = JSON.parse(data);
 
-    }
-
-    else {
+    } else {
 
         planner = [];
 
     }
 
 }
+
 // ===============================
 // Streak Storage
 // ===============================
 
-function saveStreak(streakData) {
+function saveStreak(streak) {
 
     localStorage.setItem(
         "devdeskStreak",
-        JSON.stringify(streakData)
+        JSON.stringify(streak)
     );
 
 }
 
 function loadStreak() {
 
-    let data = localStorage.getItem("devdeskStreak");
+    let data =
+        localStorage.getItem("devdeskStreak");
 
     if (data) {
 
@@ -199,53 +184,18 @@ function loadStreak() {
     return {
 
         current: 1,
-
         best: 1,
-
         lastOpened: new Date().toDateString()
 
     };
 
 }
-// ===============================
-// Streak Storage
-// ===============================
 
-function saveStreak(streak){
-
-    localStorage.setItem(
-        "devdeskStreak",
-        JSON.stringify(streak)
-    );
-
-}
-
-function loadStreak(){
-
-    let data = localStorage.getItem("devdeskStreak");
-
-    if(data){
-
-        return JSON.parse(data);
-
-    }
-
-    return{
-
-        current:1,
-
-        best:1,
-
-        last:new Date().toDateString()
-
-    };
-
-}
 // ===============================
 // Weekly Chart Storage
 // ===============================
 
-function saveWeeklyData(data){
+function saveWeeklyData(data) {
 
     localStorage.setItem(
         "weeklyProductivity",
@@ -254,17 +204,44 @@ function saveWeeklyData(data){
 
 }
 
-function loadWeeklyData(){
+function loadWeeklyData() {
 
-    let data=
-    localStorage.getItem("weeklyProductivity");
+    let data =
+        localStorage.getItem("weeklyProductivity");
 
-    if(data){
+    if (data) {
 
         return JSON.parse(data);
 
     }
 
-    return [0,0,0,0,0,0,0];
+    return [0, 0, 0, 0, 0, 0, 0];
+
+}
+
+// ===============================
+// XP System
+// ===============================
+
+function addXP(points) {
+
+    let stats = loadStats();
+
+    stats.xp += points;
+
+    while (stats.xp >= 100) {
+
+        stats.xp -= 100;
+
+        stats.level++;
+
+        alert(
+            "🎉 Level Up!\n\nYou reached Level " +
+            stats.level
+        );
+
+    }
+
+    saveStats(stats);
 
 }

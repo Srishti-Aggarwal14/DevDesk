@@ -16,6 +16,12 @@ let motivationLine = document.getElementById("motivationLine");
 let goalPercent = document.getElementById("goalPercent");
 let userLevel = document.getElementById("userLevel");
 
+let userXP = document.getElementById("userXP");
+
+let levelTitle = document.getElementById("levelTitle");
+
+let levelProgress = document.getElementById("levelProgress");
+
 // ===============================
 // Update Dashboard
 // ===============================
@@ -23,6 +29,41 @@ let userLevel = document.getElementById("userLevel");
 function updateInsights() {
 
     let stats = loadStats();
+    // --------------------------
+// XP & Level
+// --------------------------
+
+userXP.textContent = stats.xp + " XP";
+
+levelProgress.textContent =
+    "XP : " + stats.xp + " / 100";
+
+if(stats.level == 1){
+
+    levelTitle.textContent = "🌱 Beginner";
+
+}
+else if(stats.level == 2){
+
+    levelTitle.textContent = "🚀 Intermediate";
+
+}
+else if(stats.level == 3){
+
+    levelTitle.textContent = "🔥 Advanced";
+
+}
+else if(stats.level == 4){
+
+    levelTitle.textContent = "💎 Expert";
+
+}
+else{
+
+    levelTitle.textContent =
+        "👑 Master (Level " + stats.level + ")";
+
+}
 
     // --------------------------
     // Counts

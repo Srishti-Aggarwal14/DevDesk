@@ -280,15 +280,8 @@ function updateTimerDisplay() {
 
 function updateDashboard() {
 
-    // notesCount.textContent = stats.notes;
-
-    // focusCount.textContent = stats.focus;
-
-    // pomodoroCount.textContent = stats.pomodoro;
-
-    /*updateProgress();
-
-    updateInsights();*/
+    // Hamesha latest stats localStorage se lo
+    stats = loadStats();
 
     saveStats(stats);
 
@@ -343,6 +336,7 @@ function startPomodoro() {
             timerDisplay.textContent = "✅ Completed";
 
             stats.pomodoro++;
+            addXP(30);
 
 updateDashboard();
 if (typeof updateInsights === "function") {
@@ -365,7 +359,7 @@ if(typeof updateChart==="function"){
 
             setTimeout(function () {
 
-                alert("🎉 Pomodoro Completed!");
+                showToast("🍅 Pomodoro Completed!");
 
                 totalSeconds = 25 * 60; 
 
@@ -486,17 +480,7 @@ setInterval(updateDateTime, 1000);
 // Event Listeners
 // -------------------------------
 
-//updateBtn.addEventListener("click", updateFocus);
 
-//addNoteBtn.addEventListener("click", addNote);
-
-//themeBtn.addEventListener("click", toggleTheme);
-
-// startTimerBtn.addEventListener("click",startPomodoro);
-
-// pauseTimerBtn.addEventListener("click",pausePomodoro);
-
-// resetTimerBtn.addEventListener("click",resetPomodoro);
 
 themeBtn.addEventListener("click", toggleTheme);
 
@@ -505,3 +489,22 @@ startTimerBtn.addEventListener("click", startPomodoro);
 pauseTimerBtn.addEventListener("click", pausePomodoro);
 
 resetTimerBtn.addEventListener("click", resetPomodoro);
+// ===============================
+// Toast Notification
+// ===============================
+
+function showToast(message){
+
+    let toast=document.getElementById("toast");
+
+    toast.textContent=message;
+
+    toast.classList.add("show");
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },2500);
+
+}
