@@ -608,8 +608,76 @@
 
                 📄 Export Dashboard as PDF
 
-            </button>
-            <div class="analytics-card">
+            <button id="downloadPDF">
+
+    📄 Export Dashboard as PDF
+
+</button>
+
+<div class="backup-buttons">
+
+    <button id="backupBtn">
+        💾 Backup Data
+    </button>
+
+    <input
+        type="file"
+        id="restoreInput"
+        accept=".json"
+        hidden
+    >
+
+    <button id="restoreBtn">
+        📂 Restore Data
+    </button>
+
+</div>
+
+<!-- ===========================
+     Settings
+=========================== -->
+
+<div class="settings-card">
+
+    <h2>⚙️ Settings</h2>
+
+    <div class="setting-item">
+
+        <label>🍅 Pomodoro Duration (min)</label>
+
+        <input
+            type="number"
+            id="pomodoroTime"
+            min="1"
+            max="60"
+            value="25"
+        >
+
+    </div>
+
+    <div class="setting-item">
+
+        <label>☕ Break Duration (min)</label>
+
+        <input
+            type="number"
+            id="breakTime"
+            min="1"
+            max="30"
+            value="5"
+        >
+
+    </div>
+
+    <button id="saveSettings">
+
+        💾 Save Settings
+
+    </button>
+
+</div>
+
+<div class="analytics-card">
 
     <h2>📈 Productivity Analytics</h2>
     <div class="score-card">
@@ -812,6 +880,8 @@
     <script src="assets/js/reminder.js"></script>
     <script src="assets/js/analytics.js"></script>
     <script src="assets/js/ai.js"></script>
+    <script src="assets/js/backup.js"></script>
+    <script src="assets/js/settings.js"></script>
     <div id="toast"></div>
 
 </body>

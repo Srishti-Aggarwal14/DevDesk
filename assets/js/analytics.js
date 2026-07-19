@@ -191,17 +191,13 @@ function updateAnalytics(){
 
 
     completedTasks.textContent =
-    completed;
+completed;
 
+pendingTasks.textContent =
+pending;
 
-
-    pendingTasks.textContent =
-    pending;
-
-
-
-    totalTasks.textContent =
-    completed + pending;
+totalTasks.textContent =
+completed + pending;
 
 
 
@@ -239,7 +235,23 @@ if(completionBar){
     percent + "%";
 
 }
+// 🎉 Celebrate when everything is completed
+if(percent === 100 && total > 0){
 
+    if(!localStorage.getItem("celebrated100")){
+
+        celebrate();
+
+        localStorage.setItem("celebrated100","yes");
+
+    }
+
+}
+else{
+
+    localStorage.removeItem("celebrated100");
+
+}
 
 
 
@@ -249,7 +261,7 @@ if(completionBar){
 
 
     streakCount.textContent =
-    streak.current;
+streak.current;
 
 
 

@@ -56,27 +56,23 @@ container.innerHTML="";
 
 for(let badge of badges){
 
-let div=document.createElement("div");
+    let unlocked = badge.check();
 
-div.className=
-"badge "+
-(badge.check()
-?"unlocked"
-:"locked");
+    let div = document.createElement("div");
 
-div.innerHTML=`
+    div.className =
+    "badge " +
+    (unlocked ? "unlocked" : "locked");
 
-<h3>${badge.title}</h3>
+    div.innerHTML = `
 
-<p>${
-badge.check()
-?"Unlocked ✅"
-:"Locked 🔒"
-}</p>
+        <h3>${badge.title}</h3>
 
-`;
+        <p>${unlocked ? "Unlocked ✅" : "Locked 🔒"}</p>
 
-container.appendChild(div);
+    `;
+
+    container.appendChild(div);
 
 }
 

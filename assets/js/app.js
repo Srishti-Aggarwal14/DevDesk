@@ -231,6 +231,30 @@ function startPomodoro() {
 
     if (isRunning) return;
 
+    // Load user's Pomodoro setting
+    let data =
+    localStorage.getItem(
+        "devdeskSettings"
+    );
+
+    if(data){
+
+        let settings =
+        JSON.parse(data);
+
+        totalSeconds =
+        settings.pomodoro * 60;
+
+    }
+    else{
+
+        totalSeconds =
+        25 * 60;
+
+    }
+
+    updateTimerDisplay();
+
     isRunning = true;
 
     startTimerBtn.disabled = true;
@@ -318,8 +342,9 @@ if(typeof updateChart==="function"){
     );
 
     showToast("🍅 Pomodoro Completed!");
+    celebrate();
 
-    totalSeconds = 25 *60;
+    let totalSeconds = 25 * 60;
 
     updateTimerDisplay();
 
@@ -363,9 +388,30 @@ function resetPomodoro() {
     isRunning = false;
 
     
-    totalSeconds = 25 * 60;
+    /*totalSeconds = 25 * 60;*/
+    let data =
+localStorage.getItem(
+    "devdeskSettings"
+);
 
-    updateTimerDisplay();
+if(data){
+
+    let settings =
+    JSON.parse(data);
+
+    totalSeconds =
+    settings.pomodoro * 60;
+
+}
+else{
+
+    totalSeconds =
+    25 * 60;
+
+}
+
+updateTimerDisplay();
+
 
     startTimerBtn.disabled = false;
     pauseTimerBtn.disabled = true;
@@ -616,3 +662,24 @@ buttons.forEach(function(btn){
     });
 
 });
+// ===============================
+// Confetti Celebration
+// ===============================
+
+function celebrate(){
+
+    if(typeof confetti !== "function") return;
+
+    confetti({
+
+        particleCount:120,
+
+        spread:80,
+
+        origin:{
+            y:0.6
+        }
+
+    });
+
+}

@@ -380,7 +380,15 @@ function addXP(points){
 
         if(typeof confetti==="function"){
 
-            confetti();
+            confetti({
+
+    particleCount:150,
+
+    spread:90,
+
+    origin:{y:0.6}
+
+});
 
         }
 

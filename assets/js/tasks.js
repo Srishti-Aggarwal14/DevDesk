@@ -373,8 +373,10 @@ function displayTasks() {
 if(tasks[index].completed){
 
     showToast("🎉 Task Completed");
+    celebrate();
 
 }
+
 else{
 
     showToast("↩ Task Reopened");
