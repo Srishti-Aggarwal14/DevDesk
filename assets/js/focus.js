@@ -35,10 +35,25 @@ function updateFocus() {
     // Update state
     todaysFocus = "Today's Focus: " + newFocus;
 
-    saveFocus();
-    showToast("🎯 Focus Updated");
+saveFocus();
 
-    updateTagline();
+updateHeatmap();
+
+if(typeof generateAITip==="function"){
+
+    generateAITip();
+
+}
+
+if(typeof generateSchedule==="function"){
+
+    generateSchedule();
+
+}
+
+showToast("🎯 Focus Updated");
+
+updateTagline();
 
     // -----------------------
     // Stats

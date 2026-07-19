@@ -2,63 +2,114 @@
 // STORAGE FUNCTIONS
 // ===============================
 
+
 // ---------- USER ----------
 
 function saveUser() {
-    localStorage.setItem("userName", userName);
+
+    localStorage.setItem(
+        "userName",
+        userName
+    );
+
 }
+
 
 function loadUser() {
-    let storedUser = localStorage.getItem("userName");
 
-    if (storedUser !== null) {
+    let storedUser =
+    localStorage.getItem("userName");
+
+
+    if(storedUser !== null){
+
         userName = storedUser;
+
     }
+
 }
+
 
 // ---------- FOCUS ----------
 
-function saveFocus() {
-    localStorage.setItem("todaysFocus", todaysFocus);
+function saveFocus(){
+
+    localStorage.setItem(
+        "todaysFocus",
+        todaysFocus
+    );
+
 }
 
-function loadFocus() {
-    let storedFocus = localStorage.getItem("todaysFocus");
 
-    if (storedFocus !== null) {
+function loadFocus(){
+
+    let storedFocus =
+    localStorage.getItem("todaysFocus");
+
+
+    if(storedFocus !== null){
+
         todaysFocus = storedFocus;
+
     }
+
 }
+
 
 // ---------- NOTES ----------
 
-function saveNotes() {
-    localStorage.setItem("notes", JSON.stringify(notes));
+function saveNotes(){
+
+    localStorage.setItem(
+        "notes",
+        JSON.stringify(notes)
+    );
+
 }
 
-function loadNotes() {
-    let storedNotes = localStorage.getItem("notes");
 
-    if (storedNotes !== null) {
+function loadNotes(){
+
+    let storedNotes =
+    localStorage.getItem("notes");
+
+
+    if(storedNotes !== null){
+
         notes = JSON.parse(storedNotes);
+
     }
+
 }
+
 
 // ---------- THEME ----------
 
-function saveTheme(theme) {
-    localStorage.setItem("theme", theme);
+function saveTheme(theme){
+
+    localStorage.setItem(
+        "theme",
+        theme
+    );
+
 }
 
-function loadTheme() {
+
+function loadTheme(){
+
     return localStorage.getItem("theme");
+
 }
+
+
 
 // ===============================
 // Dashboard Storage
 // ===============================
 
-function saveStats(stats) {
+
+function saveStats(stats){
 
     localStorage.setItem(
         "devdeskStats",
@@ -67,42 +118,74 @@ function saveStats(stats) {
 
 }
 
-function loadStats() {
 
-    let data = localStorage.getItem("devdeskStats");
 
-    if (data) {
+function loadStats(){
 
-        let stats = JSON.parse(data);
+    let data =
+    localStorage.getItem("devdeskStats");
+
+
+    if(data){
+
+        let stats =
+        JSON.parse(data);
+
+
 
         // Backward Compatibility
-        if (stats.notes === undefined) stats.notes = 0;
-        if (stats.focus === undefined) stats.focus = 0;
-        if (stats.pomodoro === undefined) stats.pomodoro = 0;
-        if (stats.xp === undefined) stats.xp = 0;
-        if (stats.level === undefined) stats.level = 1;
+
+        if(stats.notes === undefined)
+            stats.notes = 0;
+
+
+        if(stats.focus === undefined)
+            stats.focus = 0;
+
+
+        if(stats.pomodoro === undefined)
+            stats.pomodoro = 0;
+
+
+        if(stats.xp === undefined)
+            stats.xp = 0;
+
+
+        if(stats.level === undefined)
+            stats.level = 1;
+
+
 
         return stats;
 
     }
 
+
+
     return {
 
-        notes: 0,
-        focus: 0,
-        pomodoro: 0,
-        xp: 0,
-        level: 1
+        notes:0,
+
+        focus:0,
+
+        pomodoro:0,
+
+        xp:0,
+
+        level:1
 
     };
 
 }
 
+
+
 // ===============================
 // Task Storage
 // ===============================
 
-function saveTasks() {
+
+function saveTasks(){
 
     localStorage.setItem(
         "devdeskTasks",
@@ -111,32 +194,37 @@ function saveTasks() {
 
 }
 
-function loadTasks() {
+
+
+function loadTasks(){
 
     let storedTasks =
-        localStorage.getItem("devdeskTasks");
+    localStorage.getItem("devdeskTasks");
 
-    if (storedTasks) {
 
-        tasks = JSON.parse(storedTasks);
+    if(storedTasks){
 
-    } else {
+        tasks =
+        JSON.parse(storedTasks);
 
-        tasks = [];
+    }
+
+    else{
+
+        tasks=[];
 
     }
 
 }
 
-// ===============================
-// Planner Storage
-// ===============================
+
 
 // ===============================
 // Planner Storage
 // ===============================
 
-function savePlanner() {
+
+function savePlanner(){
 
     localStorage.setItem(
         "planner",
@@ -145,29 +233,37 @@ function savePlanner() {
 
 }
 
-function loadPlanner() {
 
-    let data = localStorage.getItem("planner");
 
-    if (data) {
+function loadPlanner(){
 
-        planner = JSON.parse(data);
+    let data =
+    localStorage.getItem("planner");
+
+
+    if(data){
+
+        planner =
+        JSON.parse(data);
 
     }
 
-    else {
+    else{
 
-        planner = [];
+        planner=[];
 
     }
 
 }
 
+
+
 // ===============================
 // Streak Storage
 // ===============================
 
-function saveStreak(streak) {
+
+function saveStreak(streak){
 
     localStorage.setItem(
         "devdeskStreak",
@@ -176,32 +272,43 @@ function saveStreak(streak) {
 
 }
 
-function loadStreak() {
+
+
+function loadStreak(){
 
     let data =
-        localStorage.getItem("devdeskStreak");
+    localStorage.getItem("devdeskStreak");
 
-    if (data) {
+
+    if(data){
 
         return JSON.parse(data);
 
     }
 
+
+
     return {
 
-        current: 1,
-        best: 1,
-        lastOpened: new Date().toDateString()
+        current:1,
+
+        best:1,
+
+        lastOpened:
+        new Date().toDateString()
 
     };
 
 }
 
+
+
 // ===============================
 // Weekly Chart Storage
 // ===============================
 
-function saveWeeklyData(data) {
+
+function saveWeeklyData(data){
 
     localStorage.setItem(
         "weeklyProductivity",
@@ -210,47 +317,157 @@ function saveWeeklyData(data) {
 
 }
 
-function loadWeeklyData() {
+
+
+function loadWeeklyData(){
 
     let data =
-        localStorage.getItem("weeklyProductivity");
+    localStorage.getItem("weeklyProductivity");
 
-    if (data) {
+
+    if(data){
 
         return JSON.parse(data);
 
     }
 
-    return [0, 0, 0, 0, 0, 0, 0];
+
+    return [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ];
 
 }
+
+
 
 // ===============================
 // XP System
 // ===============================
 
-function addXP(points) {
 
-    let stats = loadStats();
+function addXP(points){
+
+    let stats =
+    loadStats();
+
 
     stats.xp += points;
 
-    while (stats.xp >= 100) {
 
-        stats.xp -= 100;
+
+    while(stats.xp >= 100){
+
+
+        stats.xp -=100;
+
 
         stats.level++;
 
-        showToast("🎉 Level Up! Welcome to Level " + stats.level);
 
-if(typeof confetti==="function"){
 
-    confetti();
+        showToast(
+            "🎉 Level Up! Welcome to Level "
+            + stats.level
+        );
 
-}
+
+
+        if(typeof confetti==="function"){
+
+            confetti();
+
+        }
+
 
     }
 
+
+
     saveStats(stats);
+
+}
+
+
+
+// ===============================
+// Heatmap Data
+// ===============================
+
+
+function loadHeatmap(){
+
+    return JSON.parse(
+
+        localStorage.getItem(
+            "devdeskHeatmap"
+        )
+
+    ) || {};
+
+}
+
+
+
+function saveHeatmap(data){
+
+    localStorage.setItem(
+
+        "devdeskHeatmap",
+
+        JSON.stringify(data)
+
+    );
+
+}
+
+
+
+// =================================================
+// NEW: Daily Analytics Storage
+// =================================================
+
+
+function saveDailyAnalytics(data){
+
+
+    localStorage.setItem(
+
+        "devdeskDailyAnalytics",
+
+        JSON.stringify(data)
+
+    );
+
+
+}
+
+
+
+function loadDailyAnalytics(){
+
+
+    let data =
+
+    localStorage.getItem(
+        "devdeskDailyAnalytics"
+    );
+
+
+
+    if(data){
+
+        return JSON.parse(data);
+
+    }
+
+
+
+    return {};
 
 }

@@ -562,13 +562,7 @@
                  Weekly Chart
             ============================ -->
 
-            <div class="chart-card">
-
-                <h2>📊 Weekly Productivity</h2>
-
-                <canvas id="weeklyChart"></canvas>
-
-            </div>
+            
             <!-- ===========================
      AI Productivity Coach
 =========================== -->
@@ -618,6 +612,21 @@
             <div class="analytics-card">
 
     <h2>📈 Productivity Analytics</h2>
+    <div class="score-card">
+
+    <h2>🚀 Overall Productivity Score</h2>
+
+    <div class="score-circle">
+
+        <span id="overallScore">0%</span>
+
+    </div>
+
+    <p id="overallRemark">
+        Getting Started...
+    </p>
+
+</div>
 
     <div class="analytics-grid">
 
@@ -637,9 +646,17 @@
         </div>
 
         <div class="analytics-box">
-            <h3 id="bestDay">Monday</h3>
-            <p>Best Day</p>
-        </div>
+            <p>🏆 Best Productivity Day</p>
+
+            <h3 id="bestDay">--</h3>
+
+    
+
+           <small id="bestDayScore">No Data</small>
+            <div id="bestDayStars" class="rating-stars">
+        ☆☆☆☆☆</div>
+
+</div>
 
         <div class="analytics-box">
             <h3 id="streakCount">1</h3>
@@ -650,6 +667,97 @@
             <h3 id="totalTasks">0</h3>
             <p>Total Tasks</p>
         </div>
+
+    </div>
+    <div class="chart-card">
+
+    <h2>📊 Completion Percentage</h2>
+
+    <h3 id="completionPercent">0%</h3>
+
+    <div class="progress-bar">
+
+        <div id="completionBar"></div>
+
+    </div>
+
+</div>
+    <div class="heatmap-card">
+
+    <h2 id="heatmapTitle">🔥 Monthly Activity</h2>
+    <div class="heatmap-days">
+
+    <span>Mon</span>
+
+    <span>Tue</span>
+
+    <span>Wed</span>
+
+    <span>Thu</span>
+
+    <span>Fri</span>
+
+    <span>Sat</span>
+
+    <span>Sun</span>
+
+</div>
+
+    <div id="heatmapGrid"></div>
+
+</div>
+
+</div>
+<div class="chart-card">
+
+    <h2>🥧 Task Distribution</h2>
+
+    <canvas id="taskPieChart"></canvas>
+
+</div>
+<div class="chart-card">
+
+    <h2>🥧 Priority Distribution</h2>
+
+    <div class="chart-container">
+
+        <canvas id="priorityPieChart"></canvas>
+
+    </div>
+
+</div>
+<div class="chart-card">
+
+    <h2>📈 Weekly Productivity Trend</h2>
+
+    <canvas id="weeklyTrendChart"></canvas>
+
+</div>
+<div class="chart-card">
+
+    <h2>📅 Last 7 Days Summary</h2>
+
+    <div id="last7DaysCards"
+         class="history-grid">
+
+    </div>
+
+</div>
+<div class="analytics-card">
+
+    <h2>📊 Monthly Productivity Report</h2>
+
+    <div id="monthlyReport"
+         class="report-grid">
+
+    </div>
+
+</div>
+<div class="analytics-card">
+
+    <h2>🏆 Achievement Timeline</h2>
+
+    <div id="achievementTimeline" class="achievement-timeline">
 
     </div>
 
@@ -693,7 +801,7 @@
 
     <script src="assets/js/badges.js"></script>
 
-    <script src="assets/js/chart.js"></script>
+    
 
     <script src="assets/js/pdf.js"></script>
 

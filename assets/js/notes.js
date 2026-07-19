@@ -43,6 +43,7 @@ function addNote() {
     stats.notes++;
 
     saveNotes();
+    updateHeatmap();
     addXP(10);
 
 updateInsights();

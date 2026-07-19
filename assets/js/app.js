@@ -108,73 +108,7 @@ let dashboardProgressText =
     document.getElementById("progressText");*/
 
 let stats = loadStats();
-// ===============================
-// Productivity Insights
-// ===============================
 
-
-
-// const morningQuotes = [
-
-//     "💡 Have a productive day ahead!",
-
-//     "☀️ Every small step counts.",
-
-//     "🚀 Start strong and stay consistent.",
-
-//     "📚 Today's effort is tomorrow's success."
-
-// ];
-
-// const afternoonQuotes = [
-
-//     "💻 Keep going, you're doing great!",
-
-//     "🌤️ Stay focused on your goals.",
-
-//     "⚡ Progress is better than perfection.",
-
-//     "🎯 One task at a time."
-
-// ];
-
-// const eveningQuotes = [
-
-//     "🌇 Finish today's goals with confidence.",
-
-//     "📖 Review what you've learned today.",
-
-//     "🏆 Success comes from consistency.",
-
-//     "✨ End the day with satisfaction."
-
-// ];
-
-// const nightQuotes = [
-
-//     "🌙 Rest well. Tomorrow is another opportunity.",
-
-//     "😴 Recharge yourself for tomorrow.",
-
-//     "💤 A fresh mind learns faster.",
-
-//     "⭐ Great work today!"
-// ];
-// function setMotivationalQuote(quotes, period) {
-
-//     if (currentGreetingPeriod !== period) {
-
-//         currentGreetingPeriod = period;
-
-//         let randomIndex = Math.floor(Math.random() * quotes.length);
-
-//         selectedQuote = quotes[randomIndex];
-
-//     }
-
-//     motivation.textContent = selectedQuote;
-
-// }
 
 
 // -------------------------------
@@ -287,26 +221,7 @@ function updateDashboard() {
     saveStats(stats);
 
 }
-/*function updateProgress() {
 
-    let completed = stats.notes + stats.focus + stats.pomodoro;
-
-    let max = 15;
-
-    let percentage = Math.min(
-        Math.round((completed / max) * 100),
-        100
-    );
-
-    dashboardProgressFill.style.width = percentage + "%";
-
-    dashboardProgressText.textContent = percentage + "%";
-
-}*/
-
-// ===============================
-// Start Timer
-// ===============================
 
 // ===============================
 // Start Timer
@@ -337,17 +252,54 @@ function startPomodoro() {
             timerDisplay.textContent = "✅ Completed";
 
             stats.pomodoro++;
-            addXP(30);
+
+saveStats(stats);
+
+addXP(30);
 
 updateDashboard();
+
+updateDailyAnalytics();
+
+updateAnalytics();
+
+updateTrendChart();
+
+renderLast7Days();
+
+updateHeatmap();
+
+// Update Real Daily Analytics
+
+if(typeof updateDailyAnalytics === "function"){
+
+    updateDailyAnalytics();
+
+}
+
+if(typeof generateAITip==="function"){
+
+    generateAITip();
+
+}
+
+
+if(typeof generateSchedule==="function"){
+
+    generateSchedule();
+
+}
+
 if (typeof updateInsights === "function") {
     updateInsights();
 }
+
 if(typeof renderBadges==="function"){
 
-renderBadges();
+    renderBadges();
 
 }
+
 if(typeof updateChart==="function"){
 
     updateChart();
@@ -367,7 +319,7 @@ if(typeof updateChart==="function"){
 
     showToast("🍅 Pomodoro Completed!");
 
-    totalSeconds =25 * 60;
+    totalSeconds = 25 *60;
 
     updateTimerDisplay();
 

@@ -2,83 +2,103 @@
 // Weekly Productivity Chart
 // ===============================
 
-let weeklyData = loadWeeklyData();
+let weeklyChartCanvas = document.getElementById("weeklyChart");
 
-let ctx = document
-.getElementById("weeklyChart")
-.getContext("2d");
+let productivityChart = null;
 
-let productivityChart = new Chart(ctx,{
+if (weeklyChartCanvas && typeof Chart !== "undefined") {
 
-    type:"bar",
+    let weeklyData = loadWeeklyData();
 
-    data:{
+    let ctx = weeklyChartCanvas.getContext("2d");
 
-        labels:[
-            "Mon",
-            "Tue",
-            "Wed",
-            "Thu",
-            "Fri",
-            "Sat",
-            "Sun"
-        ],
+    productivityChart = new Chart(ctx, {
 
-        datasets:[{
+        type: "bar",
 
-            label:"Tasks Completed",
+        data: {
 
-            data:weeklyData,
+            labels: [
+                "Mon",
+                "Tue",
+                "Wed",
+                "Thu",
+                "Fri",
+                "Sat",
+                "Sun"
+            ],
 
-            borderWidth:1,
+            datasets: [{
 
-            borderRadius:8
+                label: "Tasks Completed",
 
-        }]
+                data: weeklyData,
 
-    },
+                borderWidth: 1,
 
-    options:{
+                borderRadius: 8,
 
-        responsive:true,
+                backgroundColor: "#2563eb"
 
-        plugins:{
-
-            legend:{
-                display:false
-            }
+            }]
 
         },
 
-        scales:{
+        options: {
 
-            y:{
+            responsive: true,
 
-                beginAtZero:true
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+
+                    display: false
+
+                }
+
+            },
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: true
+
+                }
 
             }
 
         }
 
-    }
+    });
 
-});
+}
 
-function updateChart(){
+function updateChart() {
 
-    let today=new Date().getDay();
+    if (!productivityChart) return;
 
-    let index=(today+6)%7;
+    let weeklyData = loadWeeklyData();
 
-    weeklyData[index]=
-        notes.length+
-        stats.focus+
-        stats.pomodoro+
+    let today = new Date().getDay();
+
+    let index = (today + 6) % 7;
+
+    weeklyData[index] =
+
+        notes.length +
+
+        stats.focus +
+
+        stats.pomodoro +
+
         planner.length;
 
     saveWeeklyData(weeklyData);
 
-    productivityChart.data.datasets[0].data=weeklyData;
+    productivityChart.data.datasets[0].data = weeklyData;
 
     productivityChart.update();
 
