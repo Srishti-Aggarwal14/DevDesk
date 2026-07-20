@@ -3,6 +3,9 @@
 > **Build. Learn. Grow.**
 
 DevDesk is a modern all-in-one productivity web application designed to help students and developers organize their daily workflow, improve focus, and monitor productivity through real-time analytics.
+## 🌐 Live Demo
+
+🔗 https://dev-desk-liard.vercel.app
 
 ---
 
